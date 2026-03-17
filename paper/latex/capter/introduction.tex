@@ -12,11 +12,11 @@
 % \item 
 % \end{itemize}
 
-Recent large language models (LLMs) achieve strong performance on short-horizon tasks \citep{swe-bench, hle, omni-olpc} but struggle with long-horizon autonomy \citep{amodei2024machines, kwa2025measuringaiabilitycomplete, metr2025measuring}. Existing agent benchmarks focus primarily on short-horizon tasks \citep{mialon2023gaiabenchmarkgeneralai, browsecomp, webarenarea, mind2web}, limiting their ability to evaluate sustained interaction with complex environments.
+Recent large language models (LLMs), particularly when augmented with reasoning and tool-use capabilities, have demonstrated strong performance on a variety of cognitively demanding tasks, including code editing, mathematical problem solving, and complex information retrieval \citep{swe-bench, hle, omni-olpc}. However, accumulating empirical evidence indicates that such capabilities fail to generalize into robust, domain-agnostic autonomy, especially in realistic settings requiring long-horizon planning, persistent objective alignment, and stable behavioral consistency—core prerequisites for participation in real-world economic systems \citep{amodei2024machines, kwa2025measuringaiabilitycomplete, metr2025measuring}. Correspondingly, existing agent benchmarks—spanning web interaction \citep{mialon2023gaiabenchmarkgeneralai, browsecomp, webarenarea, mind2web, swe-bench, tbench_2025} primarily focus on short-horizon or highly structured tasks, limiting their ability to evaluate sustained interaction with complex, evolving environments. Recent studies on long-horizon autonomy consistently demonstrate that even state-of-the-art agents struggle to maintain coherent strategies over extended time spans \citep{nof1, andonlabs2025vendingbench2, backlund2025vendingbenchbenchmarklongtermcoherence}.
 
 \begin{figure*}[t]
 \begin{center}
-\includegraphics[width=\linewidth]{figures/env.pdf}
+\includegraphics[width=\linewidth]{latex/figures/env.pdf}
 \end{center}
 \caption{
 Overview of the hierarchical supermarket environment, illustrating intra-day agent–environment interactions and end-of-day state transition dynamics.
@@ -25,14 +25,14 @@ Overview of the hierarchical supermarket environment, illustrating intra-day age
 \vspace{-5mm}
 \end{figure*}
 
-To systematically study this challenge, we introduce \textit{RetailBench}, a benchmark that incorporates elements from retail operations and economic modeling principles. RetailBench centers on a supermarket operation scenario that demands long-horizon decision-making, sustained interaction with a dynamic environment, and the integration of heterogeneous historical information. The benchmark evaluates whether LLM-based agents can sustain business operations under stochastic, multi-factor conditions.
+To systematically study this challenge, we introduce \textit{RetailBench}, a new benchmark grounded in real-world commercial data and informed by established economic modeling principles.RetailBench centers on a supermarket operation scenario that demands long-horizon decision-making, sustained interaction with a dynamic environment, and the integration of heterogeneous historical information. The benchmark evaluates whether LLM-based agents can autonomously sustain realistic business operations under complex, multi-factor conditions.
 
 
-We evaluate eight state-of-the-art LLMs and find that current models struggle to maintain stable decisions as the decision space expands, often fail to incorporate relevant information, and frequently exhibit hallucinations and economically irrational behaviors that lead to environment collapse.
+We evaluate eight state-of-the-art LLMs in this environment. Our results show that current models struggle to maintain stable decision quality as the decision space expands and often fail to incorporate all relevant information. Moreover, hallucinations and economically irrational behaviors frequently emerge during long-horizon execution, leading to environment collapse and preventing sustained autonomous operation.
 
 Our contributions are summarized as follows:
 \begin{itemize}[leftmargin=*]
-    \item We introduce \textit{RetailBench}, an open-source benchmark for evaluating long-horizon decision-making in simulated retail environments, characterized by coupled pricing-inventory control, stochastic demand, and multi-day planning horizons.
-    \item Through experiments across eight models and three environment configurations, we identify and quantify four systematic failure patterns that prevent current LLM-based agents from sustaining long-horizon operations: (1) non-scalable decision-making, (2) incomplete information coverage, (3) temporal instability, and (4) invalid actions.
-    \item We propose the \textit{Evolving Strategy \& Execution} framework as a reference implementation that separates high-level strategy formulation from low-level execution. In our experiments, this framework achieves improved operational stability compared to day-level Reflection baselines, though substantial gaps remain relative to heuristic policies.
+    \item We introduce \textit{RetailBench}, a high-fidelity benchmark for evaluating long-horizon autonomous decision-making in realistic retail environments.
+    \item We propose the \textit{Evolving Strategy \& Execution} agent framework, which improves operational stability compared to a Reflection-based baseline.
+    \item Through extensive experiments, we identify systematic failure modes of current LLM-based agents in long-horizon, multi-factor decision-making settings.
 \end{itemize}

@@ -1,16 +1,23 @@
+# Runtime and output directories
 model_run_time/
 logs/
 *.log
-paper_data/
 paper_dont_data/
-venv/
+strategy_analysis/
 
 # Python bytecode and caches
 __pycache__/
 *.py[cod]
+*.pyc
 *$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.nox/
+.tox/
 
 # Virtual environments
+venv/
 .venv/
 env/
 ENV/
@@ -22,13 +29,6 @@ dist/
 .eggs/
 pip-wheel-metadata/
 
-# Test and tooling caches
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.nox/
-.tox/
-
 # Coverage reports
 .coverage
 .coverage.*
@@ -37,5 +37,43 @@ htmlcov/
 # Jupyter
 .ipynb_checkpoints/
 
+# LaTeX temporary files
+*.aux
+*.blg
+*.bbl
+*.out
+*.toc
+*.lof
+*.lot
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+texput.log
+
 # OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# Temporary files
+*.tmp
+*.bak
+*.backup
+121212
+
+# Claude Code settings (optional - comment out if you want to share these)
+.claude/settings.local.json

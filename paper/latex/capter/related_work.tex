@@ -6,28 +6,3 @@ In parallel, a growing body of benchmarks targets long-horizon planning abilitie
 
 \paragraph{Long-horizon agent frameworks.}
 Recent advances in agent design address these challenges by introducing structured frameworks that decouple high-level planning from low-level execution. Approaches such as Plan-and-Act \citep{erdogan2025planandactimprovingplanningagents} and EAGLET \citep{si2025goalplanjustwish} adopt planner--executor architectures to support hierarchical decision-making, dynamic replanning, and improved execution stability over long horizons. Extensions to multi-agent settings ELHPlan \citep{ling2025elhplanefficientlonghorizontask} and plan-aware context management frameworks PAACE \citep{yuksel2025paaceplanawareautomatedagent} further emphasize task decomposition, explicit strategy representation, and memory-aware context control. Together, these works indicate that scalable long-horizon autonomy increasingly relies on structured planning modules and controlled execution mechanisms rather than monolithic end-to-end policies.
-
-\paragraph{Classical operations research baselines.}
-A significant limitation of our current evaluation is the absence of strong classical operations research and control theory baselines. Retail operations have been extensively studied in the OR literature, with well-established solutions including base-stock policies for inventory control \citep{inventory}, newsvendor models for single-period decisions, and dynamic pricing algorithms \citep{supplychain}. Methods such as Model Predictive Control (MPC) and approximate dynamic programming have also been applied to multi-period inventory and pricing problems. Our current evaluation compares only against prompting-based LLM agent frameworks; we do not include these classical OR baselines, which likely represent strong oracles for many subtasks. The relative performance of LLM-based agents compared to these well-established methods remains an important open question.
-
-\paragraph{Positioning relative to existing benchmarks.}
-RetailBench complements existing benchmarks by targeting properties not jointly addressed in prior work: long-horizon planning, economic optimization objectives, coupled decision spaces, stochastic dynamics, and open-source availability. Table~\ref{tab:novelty_comparison} provides a detailed comparison.
-
-\begin{table}[t]
-\centering
-\footnotesize
-\caption{Comparison of RetailBench with related long-horizon benchmarks.}
-\label{tab:novelty_comparison}
-\begin{tabular}{@{}llccc@{}}
-\toprule
-Benchmark & Domain & Horizon & Econ. Obj. & Open \\
-\midrule
-WebArena~\citep{webarenarea} & Web tasks & Short & No & Yes \\
-Mind2Web~\citep{mind2web} & Web tasks & Medium & No & Yes \\
-VendingBench~\citep{andonlabs2025vendingbench2} & Vending & Long & Limited & Yes \\
-OdysseyBench~\citep{odysseybenchevaluatingllmagents} & Games & Long & No & Yes \\
-\midrule
-\textbf{RetailBench} & \textbf{Retail Ops.} & \textbf{Long} & \textbf{Yes} & \textbf{Yes} \\
-\bottomrule
-\end{tabular}
-\end{table}

@@ -1,9 +1,8 @@
 \subsection{Problem Formulation and Overview}
 
-We model supermarket operations as a Markov Decision Process (MDP), in which an autonomous agent manages a single retail store over a finite horizon of days. At each day $t$, the agent makes a sequence of operational decisions that jointly determine the store’s daily outcomes.
 
-\paragraph{Design Rationale.}
-The environment captures key retail constraints while remaining tractable for simulation. Demand distributions derive from the Dominick’s dataset \citep{DominicksDataset}, supply-chain parameters reflect empirical patterns \citep{supplychain}, and news events are synthesized to mimic financial news \citep{ashraq2025financialNewsArticles}. The environment remains a simplified abstraction that excludes competitive dynamics and multi-store coordination.
+
+We model supermarket operations as a Markov Decision Process (MDP), in which an autonomous agent manages a single retail store over a finite horizon of days. At each day $t$, the agent makes a sequence of operational decisions that jointly determine the store’s daily outcomes.
 
 Formally, the MDP is defined as $(\mathcal{S}, \mathcal{A}, \mathcal{T}, R, \gamma)$,
 % \begin{equation}
@@ -13,13 +12,11 @@ where $\mathcal{S}$ denotes the state space, $\mathcal{A}$ the action space, $\m
 
 At the beginning of each day $t$, the agent observes the initial state $S_{t,0}$ and executes a sequence of intra-day actions indexed by $k$. Each action $a_{t,k} \in \mathcal{A}$ induces a transition to the next intra-day state $S_{t,k+1}$. When the agent issues the \textit{end-today} action, the environment transitions to the initial state of the next day, $S_{t+1,0}$, according to the transition dynamics $\mathcal{T}$. Figure~\ref{fig:workflow} illustrates the overall interaction process.
 
-The environment supports long-horizon operation over more than one thousand simulated days, with episodes terminating if the store fails to pay rent for five consecutive days. In our experiments, we observe episodes ranging from 20 to 180 days depending on model performance and environment difficulty, providing sufficient temporal scale to evaluate long-horizon decision-making while remaining computationally tractable.
+The environment supports long-horizon operation over more than one thousand simulated days, with episodes terminating if the store fails to pay rent for five consecutive days.
 
-\subsection{State Space and Observations}
+\subsection{State Space}
 
-The environment state $S_{t,k}$ summarizes the complete operational context of the store at step $k$ of day $t$. However, the agent does not observe the full state directly; instead, it receives partial observations through tool queries and action feedback. Formally, this makes the problem a Partially Observable Markov Decision Process (POMDP), though we maintain the MDP notation for simplicity and because information can be recovered through querying tools.
-
-The complete state is composed of multiple interdependent components:
+The intra-day state $S_{t,k}$ summarizes the complete operational context of the store at step $k$ of day $t$ and is composed of multiple interdependent components:
 % \begin{equation}
 $S_{t,k} = \big(
 S_{t,k}^{\text{prod}},
@@ -39,10 +36,7 @@ S_{t,k}^{\text{fin}}
     \item $S_{t,k}^{\text{fin}}$ denotes the financial state of the store, including available cash and estimated net worth, accounting for inventory depreciation over product shelf life.
 \end{itemize}
 
-Together, these components define a richly structured yet partially stochastic state space.
-
-\paragraph{Observations and Tool Access.}
-The agent receives partial observations of the state through a set of query tools. Available tools include: \texttt{query\_inventory} (current stock levels), \texttt{query\_sales\_history} (past sales records), \texttt{query\_reviews} (customer feedback), \texttt{query\_supplier\_info} (prices and lead times), \texttt{query\_news} (current events), and \texttt{query\_financial\_state} (cash on hand and net worth). The agent must actively query these tools to gather information; no state information is provided automatically. This design reflects realistic operational settings where decision-makers must actively seek out relevant data. Further details of the environment design and tool specifications are deferred to Appendix~\ref{appendix:env_details}.
+Together, these components define a richly structured yet partially stochastic state space. Further details of the environment design are deferred to Appendix~\ref{appendix:env_details}.
 
 \subsection{Action Space}
 
@@ -94,4 +88,4 @@ Specifically, each day-level transition consists of the following steps:
     The agent’s financial state is updated based on realized revenues and costs, after which new exogenous information (e.g., news or market signals) for the next day is generated.
 \end{enumerate}
 
-\input{table/overall_framework}
+\input{latex/table/overall_framework}

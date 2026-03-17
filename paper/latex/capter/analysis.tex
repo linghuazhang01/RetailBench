@@ -1,23 +1,54 @@
-Based on quantitative evaluation and manual inspection, we identify key factors that explain model failures.
+
+Based on both quantitative evaluation results and manual inspection of trajectories, we identify several key factors that explain why current models fail to operate reliably in the environment.
+
+We analyze these failure modes from four complementary perspectives.
 
 \subsection{Non-scalable Decision-Making Capability}
 
-\input{table/analysis_sales}
+\input{latex/table/analysis_sales}
 
-Models achieve reasonable performance in Easy settings but degrade as complexity increases (Appendix~\ref{appendix:total_results}). We analyze SKUs and categories sold per day versus those considered during strategy phases (Tables~\ref{tab:sold_sku_cat_context}, Appendix~\ref{appendix:category_analysis}). Decision-making capability does not scale proportionally with environment size; performance remains flat despite more options. Notably, Gemini-3 (Fast), with the largest context window, performs better, suggesting context capacity helps retain salient information. Even the strongest models fail to cover the full decision space, leading to systematic degradation in larger settings.
 
-\subsection{Incomplete Information Coverage}
+As shown in Appendix~\ref{appendix:total_results}, models achieve reasonable performance in the Easy setting but exhibit consistent degradation as the environment scales in complexity. To better understand this phenomenon, we analyze both the average number of stock keeping units (SKUs) and product categories sold per day, as well as the number of SKUs and categories explicitly considered during the \emph{Evolving Strategy} phase (Tables~\ref{tab:sold_sku_cat_context} and Appendix ~\ref{appendix:category_analysis}).
 
-\input{table/tool_usage_frequency_easy}
+Across most models, decision-making capability does not scale proportionally with the size of the environment. Instead, performance remains relatively flat despite a substantial increase in the number of available options. Notably, Gemini-3 (Fast), which supports the largest maximum context window, performs better than other models in this respect, suggesting that larger context capacity helps retain salient information even when the effective interaction context is constrained.
 
-We analyze information sources models query for SKUs in daily strategies. Most models primarily rely on supplier prices, inventory levels, SKU ratings, and historical sales (Table~\ref{tab:tool_usage_easy}), while consistently ignoring critical signals like customer reviews, return rates, and current prices. Correlation analysis shows strong positive relationships between review query frequency and sales performance (Appendix~\ref{appendix:tool_use_analysis}), indicating incomplete information coverage limits decision quality.
+Nevertheless, even the strongest models fail to cover the full decision space. This indicates that current systems are unable to expand their effective decision-making scope as the environment grows, leading to systematic performance degradation in larger and more complex settings.
 
-\subsection{Temporal Instability}
+\subsection{Incomplete Decision-Making Due to Limited Information Coverage}
 
-\input{table/strategy_stability}
+\input{latex/table/tool_usage_frequency_easy}
 
-Beyond scalability and information coverage, temporal instability contributes to long-horizon failure. Agents frequently revise strategies across consecutive days, even under stable conditions. We quantify instability via macro strategy similarity (LLM-based semantic consistency) and execution strategy similarity (Jaccard similarity over key fields), computing Std\_diff, MAC, and TV metrics. Across all environments, we observe consistent temporal instability (Table~\ref{tab:strategy_instability_easy}, Appendix~\ref{appendix:score_analysis}): macro strategies remain relatively stable, but execution strategies show substantial variability—especially for Qwen-235B (Thinking). Failures arise from inability to maintain consistent execution policies over extended horizons.
+We analyze the information sources that models attend to when making operational decisions by examining the data queried for the set of SKUs included in each day’s final strategy. This analysis reveals a clear concentration of attention on a limited subset of signals.
+
+Specifically, most models primarily rely on supplier prices, inventory levels, SKU ratings, and historical sales records when deciding how to operate selected SKUs in Table~\ref{tab:tool_usage_easy}. In contrast, several other critical signals—such as recent customer reviews, return rates, and current selling prices—are consistently underutilized or entirely ignored.
+
+
+
+Further correlation analysis shows a strong positive relationship between the frequency of SKU reviews queries and average daily sales performance in Appendix ~\ref{appendix:tool_use_analysis}. This observation aligns with the underlying environment dynamics and indicates that incomplete information coverage is a key factor limiting decision quality. Overall, these results suggest that models often fail to perform sufficiently comprehensive information gathering, leading to systematically suboptimal operational decisions.
+\input{latex/table/strategy_stability}
+\subsection{Temporal Instability in Execution-Level Decision-Making}
+
+Beyond limitations in decision scalability and information coverage, we identify temporal instability in execution-level decision-making as a key contributor to long-horizon failure. Even under relatively stable environmental conditions, agents frequently revise their strategies across consecutive days, leading to inconsistent execution trajectories.
+
+\paragraph{Measuring Strategy Similarity.}
+We quantify temporal instability by measuring the similarity between strategies on adjacent days at both macro and execution levels. Macro strategy similarity is assessed using an LLM-based prompt that evaluates semantic consistency between consecutive high-level plans. Execution strategy similarity is computed via set-based Jaccard similarity over key fields, including \texttt{focus\_skus}, \texttt{sku\_supplier\_mapping}, \texttt{news\_to\_monitor}, and \texttt{sku\_to\_monitor}, with the final execution similarity obtained by averaging across fields.
+
+\paragraph{Instability Metrics.}
+To characterize temporal fluctuations, we compute three complementary metrics: the standard deviation of first-order differences (\textit{Std\_diff}) to capture short-term volatility, the mean absolute change (\textit{MAC}) to estimate typical day-to-day variation, and total variation (\textit{TV}) to reflect cumulative long-term instability.
+
+Across all three environment configurations, we observe consistent temporal instability in both macro- and execution-level strategies. For clarity, we present detailed results from the Easy environment in Table~\ref{tab:strategy_instability_easy} and Appendix~\ref{appendix:score_analysis} . Despite its reduced complexity, the Easy setting already exhibits pronounced temporal fluctuations. In particular, macro strategies remain relatively stable over time, whereas execution strategies show substantially larger variability across most models. This effect is especially pronounced for Qwen-235B (Thinking), which also performs poorly across all environments.
+
+Overall, these results indicate that long-horizon failures arise not only from suboptimal strategy formulation, but more fundamentally from the inability to maintain temporally consistent execution policies over extended horizons.
 \subsection{Hallucinations and Invalid Actions}
 
-Manual inspection reveals recurrent patterns breaking correctness and validity. First, models hallucinate non-existent SKUs or quantities, incorporating these into plans (Appendix~\ref{appendix:hallucinations}), misaligning decisions with true state. Second, models output invalid actions violating constraints (negative quantities, implausible pricing; Appendix~\ref{appendix:invalid_action}). These occur frequently and can destabilize systems. In realistic settings, both would be unacceptable and could trigger collapse.
+Finally, manual inspection reveals recurrent failure patterns that directly break planning correctness and action validity. We distinguish two closely related but practically different issues:
+
+\paragraph{Hallucinations in reasoning}
+Models occasionally generate reasoning traces that reference non-existent SKUs or fabricate numerical quantities, and subsequently incorporate these hallucinated elements into multi-step plans (examples are provided in Appendix~\ref{appendix:hallucinations}). As a result, decisions become misaligned with the true environment state, even when the overall planning structure appears internally coherent.
+
+  
+\paragraph{Invalid or irrational actions.}
+Models sometimes output actions that violate basic constraints or are inconsistent with historical demand, such as negative order quantities or implausible pricing in Appendix~\ref{appendix:invalid_action}. Even though state-modifying operations are restricted to only a small set of tools, these invalid actions occur with non-negligible frequency and can quickly destabilize the system in long-horizon operation.
+
+In realistic operational settings, both hallucinations and invalid actions would be unacceptable and could directly trigger system collapse.
 

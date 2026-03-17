@@ -1,17 +1,21 @@
 \subsection{Performance Comparison between Agent Frameworks}
 
-We conduct a four-framework comparison on GLM-4.6, Kimi-K2 (Thinking), and GPT-5.2\footnote{Three runs per model; differences are preliminary observations rather than statistically significant conclusions.}. As shown in Table~\ref{tab:framework_stats}, \textit{Evolving Strategy \& Execution} achieves higher mean sales and profit and lower expiration rates than alternatives. We attribute this to day-level strategy updates (reducing oscillations vs. step-level reflection) and explicit strategy representation (improving consistency). However, even our framework exhibits substantial day-to-day variability, indicating that maintaining stable long-horizon strategies remains challenging.
+Due to computational budget constraints, we conduct a comprehensive four-framework comparison on three representative models: GLM-4.6, Kimi-K2 (Thinking), and GPT-5.2. As reported in Table~\ref{tab:framework_stats}, \textit{Evolving Strategy \& Execution} consistently outperforms alternative agent frameworks on core metrics, achieving higher sales and profit while substantially reducing product expiration rates.
 
-Based on these results, we select the two strongest frameworks for broader evaluation. Averaged across all models, our framework outperforms day-level Reflection, but substantial gaps remain relative to heuristic policies (Table~\ref{tab:framework_stats}), highlighting current limitations of LLM-based agents.
+Based on these results, we select the two strongest-performing frameworks for broader evaluation across all eight models. When averaged over all models, our proposed framework demonstrates clear improvements over \textit{Reflection (Day-Level)}.
 
-Table~\ref{tab:scenario_stats} presents complete results across all models, revealing recurring and systematic failure modes that suggest structural rather than model-specific bottlenecks.
+Despite these gains, a substantial gap remains relative to the hand-crafted heuristic policy, which serves as an approximate upper bound. This gap highlights the current limitations of LLM-based agents in long-horizon decision-making. Notably, Table~\ref{tab:framework_stats} also suggests that larger closed-source models, such as GPT-5.2, tend to achieve more stable and sustained store operation compared to smaller or open-source counterparts, indicating that model capacity remains an important factor alongside framework design.
+
+Table~\ref{tab:scenario_stats} presents the complete results across all eight evaluated models. Across models, we observe recurring and systematic failure modes in the current environment, suggesting that the performance bottlenecks are structural rather than model-specific.
 
 \begin{figure}
     \centering
-    \includegraphics[width=1\linewidth]{figures/selected_models_metrics.pdf}
+    \includegraphics[width=1\linewidth]{latex/figures/selected_models_metrics.pdf}
     \caption{Category-level sales and profit per category across Easy, Middle, and Hard environments. Results are shown for three representative models.}
     \label{fig:category_comparison}
 \end{figure}
 
 \subsection{Performance across Environments with Varying Difficulty}
-As difficulty increases, all models exhibit consistent degradation: shorter durations, higher expiry/return ratios, and reduced stability. Although Middle/Hard settings enable higher aggregate sales/profit, \emph{Sales per Category} and \emph{Profit per Category} decline (Figure~\ref{fig:category_comparison}), indicating challenges in high-dimensional decision spaces. The small Middle-Hard gap reflects delayed news dynamics. Overall, performance remains substantially below heuristic upper bounds (Appendix~\ref{appendix:total_results}).
+As environment difficulty increases, all models exhibit consistent performance degradation, including shorter operational durations, higher expiry and return ratios, and reduced long-horizon stability. Although the expansion of product categories in the Middle and Hard settings enables higher aggregate sales and profit for some models, \emph{Sales per Category} and \emph{Profit per Category} decline substantially (Figure~\ref{fig:category_comparison}), indicating persistent challenges in effective resource allocation within increasingly high-dimensional decision spaces.
+
+The relatively small performance gap between the Middle and Hard environments can be partly attributed to the delayed impact of intensified news dynamics, whose effects typically unfold over longer time horizons. Appendix~\ref{appendix:total_results} reports the full results across all environments under the proposed framework. Overall, while models demonstrate limited adaptability as task complexity increases, their performance remains substantially below the heuristic upper bound, highlighting persistent limitations in robust long-horizon decision-making under complex and dynamic conditions.

@@ -1,7 +1,15 @@
 \subsection{Framework Detail}
 \label{sec:two_stage_framework}
 
-Prior frameworks either lack persistent strategies or revise them during execution, inducing oscillation in long-horizon settings \citep{2025planandact, yao2023react}. We propose \textit{Evolving Strategy \& Execution}, which separates strategic deliberation from operational execution. The framework maintains a persistent global strategy and restricts updates to day-level granularity to prevent excessive short-term fluctuations. In the \textit{Evolving Strategy} stage, agents examine feedback but cannot modify the environment; in the \textit{Execution} stage, strategies are fixed and immutable. This decomposition reduces strategy drift and promotes stability (illustration in Appendix~\ref{appendix:figure_framework}).
+Prior agent frameworks, including ReAct, Reflection, and Plan-and-Act \citep{2025planandact, yao2023react}, either do not maintain a persistent global strategy, leading to inconsistent behaviors, or revise strategies during action execution, which can induce oscillation and gradual goal drift in long-horizon environments.
+
+To address these limitations, we propose an explicit two-stage interaction framework, termed \textit{Evolving Strategy \& Execution}, that separates strategic deliberation from operational execution. The framework maintains a persistent global strategy and restricts strategy updates to a day-level granularity to prevent excessive short-term fluctuations.
+
+In the \textit{Evolving Strategy} stage, the agent may invoke observation and analysis tools to examine environmental feedback and historical outcomes, but cannot execute actions that directly modify the environment. Based on this information, it determines whether to revise the inherited strategy by adding, refining, or removing components. This stage ensures that long-term intent and planning logic remain explicit rather than implicitly entangled with immediate action choices.
+
+In the \textit{Execution} stage, the strategy is fixed and treated as immutable. The agent generates concrete actions strictly consistent with the current strategy, without further modification. This controlled separation enables clearer attribution between strategy and behavioral outcomes.
+
+By alternating between these stages, the framework enforces a principled decomposition of decision-making, reduces uncontrolled strategy drift, and promotes behavioral stability and interpretability over extended horizons. An illustration is provided in Appendix~\ref{appendix:figure_framework}.
 
 \subsection{Hierarchical Policy Representation}
 \label{sec:policy}

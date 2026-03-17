@@ -4,7 +4,31 @@
       "Bash(ls -la paper/latex/*.tex)",
       "Bash(cd paper/latex && pdflatex -interaction=nonstopmode acl_latex.tex 2>&1 | tail -30)",
       "Bash(pdflatex -interaction=nonstopmode acl_latex.tex > /tmp/compile3.log 2>&1 && echo \"=== First pass completed ===\" && bibtex acl_latex > /tmp/bibtex.log 2>&1 && echo \"=== Bibtex completed ===\" && pdflatex -interaction=nonstopmode acl_latex.tex > /tmp/compile4.log 2>&1 && echo \"=== Second pass completed ===\" && pdflatex -interaction=nonstopmode acl_latex.tex > /tmp/compile5.log 2>&1 && echo \"=== Final pass completed ===\" && ls -lh acl_latex.pdf)",
-      "Bash(pdflatex -interaction=nonstopmode acl_latex.tex 2>&1 | grep -E \"\\(Error|Fatal|completed successfully|PDF\\)\" | tail -20)"
+      "Bash(pdflatex -interaction=nonstopmode acl_latex.tex 2>&1 | grep -E \"\\(Error|Fatal|completed successfully|PDF\\)\" | tail -20)",
+      "Bash(cd /Users/linghuazhang/Desktop/Project/RetailBench/paper/latex && pdflatex resubmission_response.tex)",
+      "Bash(pdflatex resubmission_response.tex)",
+      "Bash(open /Users/linghuazhang/Desktop/Project/RetailBench/paper/latex/resubmission_response.pdf)",
+      "Bash(open -R /Users/linghuazhang/Desktop/Project/RetailBench/paper/latex/resubmission_response.pdf)",
+      "Bash(pdflatex resubmission_response.tex && open resubmission_response.pdf)",
+      "Bash(ls -la *.tex 2>/dev/null || echo \"No tex files in root\")",
+      "Bash(ls -la /Users/linghuazhang/Desktop/Project/RetailBench/*.log 2>/dev/null | wc -l)",
+      "Bash(tree -L 3 paper/ -I \"*.aux|*.log|*.out|*.blg|*.fdb_latexmk|*.pdf\" 2>/dev/null || find paper/ -type f ! -name \"*.aux\" ! -name \"*.log\" ! -name \"*.out\" ! -name \"*.blg\" ! -name \"*.fdb_latexmk\" ! -name \"*.pdf\" | head -50)",
+      "Bash(find /Users/linghuazhang/Desktop/Project/RetailBench -maxdepth 1 -name \"*.log\" -type f -delete)",
+      "Bash(find /Users/linghuazhang/Desktop/Project/RetailBench/paper -name \"*.aux\" -o -name \"*.blg\" -o -name \"*.bbl\" -o -name \"*.out\" -o -name \"*.fdb_latexmk\" | xargs rm -f)",
+      "Bash(git lfs version)",
+      "Bash(git lfs track \"paper_data/**\" && git lfs track \"paper_data/**/**\" && git lfs track \"paper_data/**/**/**\")",
+      "Bash(git lfs track)",
+      "Bash(grep -h \"^import \\\\|^from \" /Users/linghuazhang/Desktop/Project/RetailBench/run_*.py /Users/linghuazhang/Desktop/Project/RetailBench/retail_environment.py /Users/linghuazhang/Desktop/Project/RetailBench/stream_chat.py)",
+      "Bash(grep -E \"matplotlib|scipy|pandas|tabulate|beautifulsoup4|requests|tqdm\" /Users/linghuazhang/Desktop/Project/RetailBench/analysis/**/*.py /Users/linghuazhang/Desktop/Project/RetailBench/plot*.py 2>/dev/null | head -20)",
+      "Bash(find /Users/linghuazhang/Desktop/Project/RetailBench -name \".env*\" -o -name \"*api_key*\" -o -name \"*secret*\" 2>/dev/null | grep -v \".git/\" | head -10)",
+      "Bash(cd arxiv_submission/capter && for file in *.tex; do sed -i '' 's|latex/figures/|figures/|g' \"$file\"; sed -i '' 's|latex/table/|table/|g' \"$file\"; done && echo \"Paths updated in chapter files\")",
+      "Bash(git check-ignore -v .claude/settings.local.json)",
+      "Bash(cd arxiv_submission && pdflatex -interaction=nonstopmode main.tex 2>&1 | tail -20)",
+      "Bash(pdflatex -interaction=nonstopmode main.tex 2>&1 | tail -30)",
+      "Bash(find /Users/linghuazhang/Desktop/Project/RetailBench -name \"__pycache__\" -type d -exec rm -rf {} + 2>/dev/null; find /Users/linghuazhang/Desktop/Project/RetailBench -name \"*.pyc\" -delete 2>/dev/null; echo \"Cleaned up Python cache files\")",
+      "Bash(ls -la /Users/linghuazhang/Desktop/Project/RetailBench/*.md)",
+      "Bash(git add .gitattributes .gitignore LICENSE requirements.txt paper/AUTO_REVIEW.md)",
+      "Bash(git add -u)"
     ]
   }
 }
