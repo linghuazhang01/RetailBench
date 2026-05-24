@@ -1,0 +1,656 @@
+[
+  {
+    "run_id": "run_plan_and_act_MiniMax-M2.5_caec_off_fcr_off_run1",
+    "run_dir": "/Volumes/Data/logs/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_plan_and_act_MiniMax-M2.5_caec_off_fcr_off/run_plan_and_act_MiniMax-M2.5_caec_off_fcr_off_run1",
+    "framework": "plan_and_act",
+    "model": "MiniMax-M2.5",
+    "scenario": "hard_v2",
+    "run_days": 73,
+    "final_networth": -397.9498191216843,
+    "total_sales": 23521,
+    "avg_daily_sold_skus": 12.082191780821917,
+    "irrational_action": 0.0,
+    "stockout_days": 52,
+    "query_depth": 0.785175879396985,
+    "action_correction": 0.17587939698492464,
+    "strategy_consistency": 0.3660095314042683,
+    "raw_quality_top1_hit": 0.1404494382022472,
+    "quality_regret_mean": 1.7236792134831462,
+    "quality_ratio_mean": 0.6434955810987673,
+    "price_first_top1_hit": 0.5898876404494382,
+    "price_regret_mean": 0.06168701288067453,
+    "price_premium_mean": 0.12647322782094134,
+    "order_qty_to_avg_daily_sales_mean": 3.979745168406494,
+    "modify_price_distance_pct_mean": 26.989252385674757,
+    "modify_price_distance_pct_max": 72.90506921523227,
+    "modify_price_min": 0.55,
+    "modify_price_max": 3.5,
+    "debug": {
+      "query_depth": {
+        "score": 0.785175879396985,
+        "count": 199,
+        "place_order_score": 0.7808988764044944,
+        "place_order_count": 178,
+        "modify_sku_price_score": 0.8214285714285714,
+        "modify_sku_price_count": 21,
+        "place_order_required_tool_hit_rate": {
+          "view_inventory": 1.0,
+          "view_sales_profit_history": 0.9044943820224719,
+          "view_current_date_supplier_prices": 0.9325842696629213,
+          "view_supplier_returns_avg_rate": 0.28651685393258425
+        },
+        "modify_sku_price_evidence_hit_rate": {
+          "sales_history": 0.9523809523809523,
+          "current_price": 0.9523809523809523,
+          "cost_evidence": 0.9047619047619048,
+          "quality_evidence": 0.47619047619047616
+        }
+      },
+      "action_correction": {
+        "score": 0.17587939698492464,
+        "correct": 35,
+        "count": 199,
+        "place_order_score": 0.14606741573033707,
+        "place_order_correct": 26,
+        "place_order_count": 178,
+        "modify_sku_price_score": 0.42857142857142855,
+        "modify_sku_price_correct": 9,
+        "modify_sku_price_count": 21,
+        "raw_quality_top1_hit": 0.1404494382022472,
+        "raw_quality_count": 178,
+        "raw_quality_top1_correct": 25,
+        "quality_regret_mean": 1.7236792134831462,
+        "quality_ratio_mean": 0.6434955810987673,
+        "price_first_top1_hit": 0.5898876404494382,
+        "price_first_count": 178,
+        "price_first_correct": 105,
+        "price_regret_mean": 0.06168701288067453,
+        "price_premium_mean": 0.12647322782094134,
+        "order_qty_to_avg_daily_sales_mean": 3.979745168406494,
+        "order_qty_to_avg_daily_sales_count": 177,
+        "modify_price_distance_pct_mean": 26.989252385674757,
+        "modify_price_distance_pct_max": 72.90506921523227,
+        "modify_price_distance_pct_count": 21,
+        "modify_price_min": 0.55,
+        "modify_price_max": 3.5,
+        "quality_reference_sources": {
+          "return_rate": 199
+        },
+        "skipped": {
+          "order_missing_avg_daily_sales": 1
+        }
+      },
+      "strategy_consistency": {
+        "score": 0.3660095314042683,
+        "components": [
+          0.3430233918128655,
+          0.388995670995671
+        ]
+      }
+    },
+    "run_type": "llm",
+    "source_path": "/Volumes/Data/logs/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_plan_and_act_MiniMax-M2.5_caec_off_fcr_off/run_plan_and_act_MiniMax-M2.5_caec_off_fcr_off_run1"
+  },
+  {
+    "run_id": "run_plan_and_act_deepseek-v4-pro_caec_off_fcr_off_run1",
+    "run_dir": "/Volumes/Data/logs/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_plan_and_act_deepseek-v4-pro_caec_off_fcr_off/run_plan_and_act_deepseek-v4-pro_caec_off_fcr_off_run1",
+    "framework": "plan_and_act",
+    "model": "DeepSeek-V4-Pro",
+    "scenario": "hard_v2",
+    "run_days": 180,
+    "final_networth": 10120.900683892261,
+    "total_sales": 164417,
+    "avg_daily_sold_skus": 32.56666666666667,
+    "irrational_action": 0.0,
+    "stockout_days": 116,
+    "query_depth": 0.9279482551143201,
+    "action_correction": 0.2705373687461396,
+    "strategy_consistency": 0.536124910762512,
+    "raw_quality_top1_hit": 0.23255813953488372,
+    "quality_regret_mean": 1.6407195348837207,
+    "quality_ratio_mean": 0.6604144656675266,
+    "price_first_top1_hit": 0.5569767441860465,
+    "price_regret_mean": 0.05225054021207296,
+    "price_premium_mean": 0.07223842605521277,
+    "order_qty_to_avg_daily_sales_mean": 6.952084984845458,
+    "modify_price_distance_pct_mean": 25.46108204728545,
+    "modify_price_distance_pct_max": 86.95652173913045,
+    "modify_price_min": 0.27,
+    "modify_price_max": 9.29,
+    "debug": {
+      "query_depth": {
+        "score": 0.9279482551143201,
+        "count": 1662,
+        "place_order_score": 0.9627906976744186,
+        "place_order_count": 860,
+        "modify_sku_price_score": 0.8905860349127181,
+        "modify_sku_price_count": 802,
+        "place_order_required_tool_hit_rate": {
+          "view_inventory": 1.0,
+          "view_sales_profit_history": 0.9744186046511628,
+          "view_current_date_supplier_prices": 0.9965116279069768,
+          "view_supplier_returns_avg_rate": 0.8802325581395349
+        },
+        "modify_sku_price_evidence_hit_rate": {
+          "sales_history": 0.9064837905236908,
+          "current_price": 0.814214463840399,
+          "cost_evidence": 0.9551122194513716,
+          "quality_evidence": 0.8865336658354115
+        }
+      },
+      "action_correction": {
+        "score": 0.2705373687461396,
+        "correct": 438,
+        "count": 1619,
+        "place_order_score": 0.2741176470588235,
+        "place_order_correct": 233,
+        "place_order_count": 850,
+        "modify_sku_price_score": 0.2665799739921977,
+        "modify_sku_price_correct": 205,
+        "modify_sku_price_count": 769,
+        "raw_quality_top1_hit": 0.23255813953488372,
+        "raw_quality_count": 860,
+        "raw_quality_top1_correct": 200,
+        "quality_regret_mean": 1.6407195348837207,
+        "quality_ratio_mean": 0.6604144656675266,
+        "price_first_top1_hit": 0.5569767441860465,
+        "price_first_count": 860,
+        "price_first_correct": 479,
+        "price_regret_mean": 0.05225054021207296,
+        "price_premium_mean": 0.07223842605521277,
+        "order_qty_to_avg_daily_sales_mean": 6.952084984845458,
+        "order_qty_to_avg_daily_sales_count": 846,
+        "modify_price_distance_pct_mean": 25.46108204728545,
+        "modify_price_distance_pct_max": 86.95652173913045,
+        "modify_price_distance_pct_count": 769,
+        "modify_price_min": 0.27,
+        "modify_price_max": 9.29,
+        "quality_reference_sources": {
+          "return_rate": 1650
+        },
+        "skipped": {
+          "order_missing_avg_daily_sales": 14,
+          "price_missing_history_reference": 31,
+          "order_missing_quality_reference": 10,
+          "price_missing_quality_reference": 2
+        }
+      },
+      "strategy_consistency": {
+        "score": 0.536124910762512,
+        "components": [
+          0.6151563720170611,
+          0.4570934495079629
+        ]
+      }
+    },
+    "run_type": "llm",
+    "source_path": "/Volumes/Data/logs/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_plan_and_act_deepseek-v4-pro_caec_off_fcr_off/run_plan_and_act_deepseek-v4-pro_caec_off_fcr_off_run1"
+  },
+  {
+    "run_id": "run_react_glm-5.1_caec_off_fcr_off_run1",
+    "run_dir": "/Volumes/Data/logs/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_react_glm-5.1_caec_off_fcr_off/run_react_glm-5.1_caec_off_fcr_off_run1",
+    "framework": "react",
+    "model": "GLM-5.1",
+    "scenario": "hard_v2",
+    "run_days": 60,
+    "final_networth": -2134.363292402812,
+    "total_sales": 7016,
+    "avg_daily_sold_skus": 3.966666666666667,
+    "irrational_action": 0.0,
+    "stockout_days": 14,
+    "query_depth": 0.8333333333333334,
+    "action_correction": 0.16455696202531644,
+    "strategy_consistency": 0.4740489130434783,
+    "raw_quality_top1_hit": 0.3191489361702128,
+    "quality_regret_mean": 0.9709085106382979,
+    "quality_ratio_mean": 0.7979638970405685,
+    "price_first_top1_hit": 0.1702127659574468,
+    "price_regret_mean": 0.19134543007108334,
+    "price_premium_mean": 0.31742824330839914,
+    "order_qty_to_avg_daily_sales_mean": 6.156584419434412,
+    "modify_price_distance_pct_mean": 36.494144716823186,
+    "modify_price_distance_pct_max": 160.07899247335868,
+    "modify_price_min": 0.69,
+    "modify_price_max": 3.99,
+    "debug": {
+      "query_depth": {
+        "score": 0.8333333333333334,
+        "count": 81,
+        "place_order_score": 0.7819148936170213,
+        "place_order_count": 47,
+        "modify_sku_price_score": 0.9044117647058824,
+        "modify_sku_price_count": 34,
+        "place_order_required_tool_hit_rate": {
+          "view_inventory": 1.0,
+          "view_sales_profit_history": 0.9148936170212766,
+          "view_current_date_supplier_prices": 1.0,
+          "view_supplier_returns_avg_rate": 0.2127659574468085
+        },
+        "modify_sku_price_evidence_hit_rate": {
+          "sales_history": 0.8823529411764706,
+          "current_price": 0.8823529411764706,
+          "cost_evidence": 1.0,
+          "quality_evidence": 0.8529411764705882
+        }
+      },
+      "action_correction": {
+        "score": 0.16455696202531644,
+        "correct": 13,
+        "count": 79,
+        "place_order_score": 0.23404255319148937,
+        "place_order_correct": 11,
+        "place_order_count": 47,
+        "modify_sku_price_score": 0.0625,
+        "modify_sku_price_correct": 2,
+        "modify_sku_price_count": 32,
+        "raw_quality_top1_hit": 0.3191489361702128,
+        "raw_quality_count": 47,
+        "raw_quality_top1_correct": 15,
+        "quality_regret_mean": 0.9709085106382979,
+        "quality_ratio_mean": 0.7979638970405685,
+        "price_first_top1_hit": 0.1702127659574468,
+        "price_first_count": 47,
+        "price_first_correct": 8,
+        "price_regret_mean": 0.19134543007108334,
+        "price_premium_mean": 0.31742824330839914,
+        "order_qty_to_avg_daily_sales_mean": 6.156584419434412,
+        "order_qty_to_avg_daily_sales_count": 36,
+        "modify_price_distance_pct_mean": 36.494144716823186,
+        "modify_price_distance_pct_max": 160.07899247335868,
+        "modify_price_distance_pct_count": 32,
+        "modify_price_min": 0.69,
+        "modify_price_max": 3.99,
+        "quality_reference_sources": {
+          "return_rate": 81
+        },
+        "skipped": {
+          "order_missing_avg_daily_sales": 11,
+          "price_missing_history_reference": 2
+        }
+      },
+      "strategy_consistency": {
+        "score": 0.4740489130434783,
+        "components": [
+          0.5730978260869566,
+          0.375
+        ]
+      }
+    },
+    "run_type": "llm",
+    "source_path": "/Volumes/Data/logs/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_react_glm-5.1_caec_off_fcr_off/run_react_glm-5.1_caec_off_fcr_off_run1"
+  },
+  {
+    "run_id": "run_react_kimi-k2.6_caec_off_fcr_off_run1",
+    "run_dir": "/Volumes/Data/logs/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_react_kimi-k2.6_caec_off_fcr_off/run_react_kimi-k2.6_caec_off_fcr_off_run1",
+    "framework": "react",
+    "model": "Kimi-K2.6",
+    "scenario": "hard_v2",
+    "run_days": 130,
+    "final_networth": 792.1928887377429,
+    "total_sales": 86214,
+    "avg_daily_sold_skus": 25.73076923076923,
+    "irrational_action": 0.004120879120879121,
+    "stockout_days": 62,
+    "query_depth": 0.9052028218694885,
+    "action_correction": 0.24531835205992508,
+    "strategy_consistency": 0.4202177495293162,
+    "raw_quality_top1_hit": 0.12538226299694188,
+    "quality_regret_mean": 2.202456574923547,
+    "quality_ratio_mean": 0.5429731842998059,
+    "price_first_top1_hit": 0.8134556574923547,
+    "price_regret_mean": 0.025500999294156165,
+    "price_premium_mean": 0.034868391208886414,
+    "order_qty_to_avg_daily_sales_mean": 9.304405979369271,
+    "modify_price_distance_pct_mean": 22.06754534609507,
+    "modify_price_distance_pct_max": 168.43235504652824,
+    "modify_price_min": 0.43,
+    "modify_price_max": 6.8,
+    "debug": {
+      "query_depth": {
+        "score": 0.9052028218694885,
+        "count": 567,
+        "place_order_score": 0.8853211009174312,
+        "place_order_count": 327,
+        "modify_sku_price_score": 0.9322916666666666,
+        "modify_sku_price_count": 240,
+        "place_order_required_tool_hit_rate": {
+          "view_inventory": 1.0,
+          "view_sales_profit_history": 0.9418960244648318,
+          "view_current_date_supplier_prices": 0.9908256880733946,
+          "view_supplier_returns_avg_rate": 0.6085626911314985
+        },
+        "modify_sku_price_evidence_hit_rate": {
+          "sales_history": 0.9666666666666667,
+          "current_price": 0.9666666666666667,
+          "cost_evidence": 0.9666666666666667,
+          "quality_evidence": 0.8291666666666667
+        }
+      },
+      "action_correction": {
+        "score": 0.24531835205992508,
+        "correct": 131,
+        "count": 534,
+        "place_order_score": 0.18670886075949367,
+        "place_order_correct": 59,
+        "place_order_count": 316,
+        "modify_sku_price_score": 0.3302752293577982,
+        "modify_sku_price_correct": 72,
+        "modify_sku_price_count": 218,
+        "raw_quality_top1_hit": 0.12538226299694188,
+        "raw_quality_count": 327,
+        "raw_quality_top1_correct": 41,
+        "quality_regret_mean": 2.202456574923547,
+        "quality_ratio_mean": 0.5429731842998059,
+        "price_first_top1_hit": 0.8134556574923547,
+        "price_first_count": 327,
+        "price_first_correct": 266,
+        "price_regret_mean": 0.025500999294156165,
+        "price_premium_mean": 0.034868391208886414,
+        "order_qty_to_avg_daily_sales_mean": 9.304405979369271,
+        "order_qty_to_avg_daily_sales_count": 312,
+        "modify_price_distance_pct_mean": 22.06754534609507,
+        "modify_price_distance_pct_max": 168.43235504652824,
+        "modify_price_distance_pct_count": 218,
+        "modify_price_min": 0.43,
+        "modify_price_max": 6.8,
+        "quality_reference_sources": {
+          "return_rate": 550
+        },
+        "skipped": {
+          "order_missing_avg_daily_sales": 15,
+          "order_missing_quality_reference": 11,
+          "price_missing_quality_reference": 6,
+          "price_missing_history_reference": 16
+        }
+      },
+      "strategy_consistency": {
+        "score": 0.4202177495293162,
+        "components": [
+          0.3119685030916365,
+          0.5284669959669959
+        ]
+      }
+    },
+    "run_type": "llm",
+    "source_path": "/Volumes/Data/logs/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_react_kimi-k2.6_caec_off_fcr_off/run_react_kimi-k2.6_caec_off_fcr_off_run1"
+  },
+  {
+    "run_id": "run_reflection_qwen3.5-397b-a17b_caec_off_fcr_off_run1",
+    "run_dir": "/Volumes/Data/logs/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_reflection_qwen3.5-397b-a17b_caec_off_fcr_off/run_reflection_qwen3.5-397b-a17b_caec_off_fcr_off_run1",
+    "framework": "reflection",
+    "model": "Qwen3.5-397B-A17B",
+    "scenario": "hard_v2",
+    "run_days": 71,
+    "final_networth": 1183.1738290225394,
+    "total_sales": 35622,
+    "avg_daily_sold_skus": 26.169014084507044,
+    "irrational_action": 0.009389671361502348,
+    "stockout_days": 48,
+    "query_depth": 0.7552395209580839,
+    "action_correction": 0.16167664670658682,
+    "strategy_consistency": 0.2815077971416675,
+    "raw_quality_top1_hit": 0.16875,
+    "quality_regret_mean": 1.8636737499999998,
+    "quality_ratio_mean": 0.6140426330790939,
+    "price_first_top1_hit": 0.61875,
+    "price_regret_mean": 0.07654558640219292,
+    "price_premium_mean": 0.11507114886748449,
+    "order_qty_to_avg_daily_sales_mean": 7.195264219552095,
+    "modify_price_distance_pct_mean": 26.447510946959138,
+    "modify_price_distance_pct_max": 75.36824474112025,
+    "modify_price_min": 0.5,
+    "modify_price_max": 3.5,
+    "debug": {
+      "query_depth": {
+        "score": 0.7552395209580839,
+        "count": 334,
+        "place_order_score": 0.75625,
+        "place_order_count": 320,
+        "modify_sku_price_score": 0.7321428571428571,
+        "modify_sku_price_count": 14,
+        "place_order_required_tool_hit_rate": {
+          "view_inventory": 1.0,
+          "view_sales_profit_history": 0.85,
+          "view_current_date_supplier_prices": 0.9625,
+          "view_supplier_returns_avg_rate": 0.2125
+        },
+        "modify_sku_price_evidence_hit_rate": {
+          "sales_history": 0.6428571428571429,
+          "current_price": 1.0,
+          "cost_evidence": 1.0,
+          "quality_evidence": 0.2857142857142857
+        }
+      },
+      "action_correction": {
+        "score": 0.16167664670658682,
+        "correct": 54,
+        "count": 334,
+        "place_order_score": 0.1625,
+        "place_order_correct": 52,
+        "place_order_count": 320,
+        "modify_sku_price_score": 0.14285714285714285,
+        "modify_sku_price_correct": 2,
+        "modify_sku_price_count": 14,
+        "raw_quality_top1_hit": 0.16875,
+        "raw_quality_count": 320,
+        "raw_quality_top1_correct": 54,
+        "quality_regret_mean": 1.8636737499999998,
+        "quality_ratio_mean": 0.6140426330790939,
+        "price_first_top1_hit": 0.61875,
+        "price_first_count": 320,
+        "price_first_correct": 198,
+        "price_regret_mean": 0.07654558640219292,
+        "price_premium_mean": 0.11507114886748449,
+        "order_qty_to_avg_daily_sales_mean": 7.195264219552095,
+        "order_qty_to_avg_daily_sales_count": 315,
+        "modify_price_distance_pct_mean": 26.447510946959138,
+        "modify_price_distance_pct_max": 75.36824474112025,
+        "modify_price_distance_pct_count": 14,
+        "modify_price_min": 0.5,
+        "modify_price_max": 3.5,
+        "quality_reference_sources": {
+          "return_rate": 334
+        },
+        "skipped": {
+          "order_missing_avg_daily_sales": 5
+        }
+      },
+      "strategy_consistency": {
+        "score": 0.2815077971416675,
+        "components": [
+          0.2293258644729156,
+          0.33368972981041944
+        ]
+      }
+    },
+    "run_type": "llm",
+    "source_path": "/Volumes/Data/logs/batches_final_hard_v2/hard_v2_all_2026-05-20_19-39-54_reflection_qwen3.5-397b-a17b_caec_off_fcr_off/run_reflection_qwen3.5-397b-a17b_caec_off_fcr_off_run1"
+  },
+  {
+    "run_id": "run_react_x-ai_grok-4.3_run1",
+    "run_dir": "/Volumes/Data/logs/batches_grok43_hard_v2/rb_hard_v2_react_grok43_flex_20260520_205350/hard_v2_react_grok43_flex_20260520_205350/run_react_x-ai_grok-4.3_run1",
+    "framework": "react",
+    "model": "Grok-4.3",
+    "scenario": "hard_v2",
+    "run_days": 58,
+    "final_networth": 828.3989357764223,
+    "total_sales": 11305,
+    "avg_daily_sold_skus": 6.741379310344827,
+    "irrational_action": 0.010344827586206898,
+    "stockout_days": 24,
+    "query_depth": 0.5659722222222222,
+    "action_correction": 0.16666666666666666,
+    "strategy_consistency": 0.2506726606726607,
+    "raw_quality_top1_hit": 0.14084507042253522,
+    "quality_regret_mean": 1.7651549295774647,
+    "quality_ratio_mean": 0.6330285162035679,
+    "price_first_top1_hit": 0.5492957746478874,
+    "price_regret_mean": 0.05827939069214013,
+    "price_premium_mean": 0.1393526052078849,
+    "order_qty_to_avg_daily_sales_mean": 9.480908698492518,
+    "modify_price_distance_pct_mean": 110.79258010118045,
+    "modify_price_distance_pct_max": 110.79258010118045,
+    "modify_price_min": 2.5,
+    "modify_price_max": 2.5,
+    "debug": {
+      "query_depth": {
+        "score": 0.5659722222222222,
+        "count": 72,
+        "place_order_score": 0.5704225352112676,
+        "place_order_count": 71,
+        "modify_sku_price_score": 0.25,
+        "modify_sku_price_count": 1,
+        "place_order_required_tool_hit_rate": {
+          "view_inventory": 0.7323943661971831,
+          "view_sales_profit_history": 0.5915492957746479,
+          "view_current_date_supplier_prices": 0.9577464788732394,
+          "view_supplier_returns_avg_rate": 0.0
+        },
+        "modify_sku_price_evidence_hit_rate": {
+          "sales_history": 1.0,
+          "current_price": 0.0,
+          "cost_evidence": 0.0,
+          "quality_evidence": 0.0
+        }
+      },
+      "action_correction": {
+        "score": 0.16666666666666666,
+        "correct": 12,
+        "count": 72,
+        "place_order_score": 0.16901408450704225,
+        "place_order_correct": 12,
+        "place_order_count": 71,
+        "modify_sku_price_score": 0.0,
+        "modify_sku_price_correct": 0,
+        "modify_sku_price_count": 1,
+        "raw_quality_top1_hit": 0.14084507042253522,
+        "raw_quality_count": 71,
+        "raw_quality_top1_correct": 10,
+        "quality_regret_mean": 1.7651549295774647,
+        "quality_ratio_mean": 0.6330285162035679,
+        "price_first_top1_hit": 0.5492957746478874,
+        "price_first_count": 71,
+        "price_first_correct": 39,
+        "price_regret_mean": 0.05827939069214013,
+        "price_premium_mean": 0.1393526052078849,
+        "order_qty_to_avg_daily_sales_mean": 9.480908698492518,
+        "order_qty_to_avg_daily_sales_count": 66,
+        "modify_price_distance_pct_mean": 110.79258010118045,
+        "modify_price_distance_pct_max": 110.79258010118045,
+        "modify_price_distance_pct_count": 1,
+        "modify_price_min": 2.5,
+        "modify_price_max": 2.5,
+        "quality_reference_sources": {
+          "return_rate": 72
+        },
+        "skipped": {
+          "order_missing_avg_daily_sales": 5
+        }
+      },
+      "strategy_consistency": {
+        "score": 0.2506726606726607,
+        "components": [
+          0.16444055944055944,
+          0.33690476190476193
+        ]
+      }
+    },
+    "run_type": "llm",
+    "source_path": "/Volumes/Data/logs/batches_grok43_hard_v2/rb_hard_v2_react_grok43_flex_20260520_205350/hard_v2_react_grok43_flex_20260520_205350/run_react_x-ai_grok-4.3_run1"
+  },
+  {
+    "run_id": "run_react_gpt55_hard_v2_20260521_110407",
+    "run_dir": "/Volumes/Data/logs/openai_gpt55_react/run_react_gpt55_hard_v2_20260521_110407",
+    "framework": "react",
+    "model": "GPT-5.5",
+    "scenario": "hard_v2",
+    "run_days": 180,
+    "final_networth": 24350.984977843673,
+    "total_sales": 136405,
+    "avg_daily_sold_skus": 32.272222222222226,
+    "irrational_action": 0.0005555555555555556,
+    "stockout_days": 137,
+    "query_depth": 0.9922169811320755,
+    "action_correction": 0.4444444444444444,
+    "strategy_consistency": 0.4337210231386036,
+    "raw_quality_top1_hit": 0.34647550776583036,
+    "quality_regret_mean": 1.0715302270011948,
+    "quality_ratio_mean": 0.777455010099794,
+    "price_first_top1_hit": 0.4551971326164875,
+    "price_regret_mean": 0.08065976588373437,
+    "price_premium_mean": 0.12090398356755382,
+    "order_qty_to_avg_daily_sales_mean": 6.926576300174001,
+    "modify_price_distance_pct_mean": 17.916401878424665,
+    "modify_price_distance_pct_max": 205.45417680454173,
+    "modify_price_min": 0.47,
+    "modify_price_max": 7.99,
+    "debug": {
+      "query_depth": {
+        "score": 0.9922169811320755,
+        "count": 1060,
+        "place_order_score": 0.9901433691756273,
+        "place_order_count": 837,
+        "modify_sku_price_score": 1.0,
+        "modify_sku_price_count": 223,
+        "place_order_required_tool_hit_rate": {
+          "view_inventory": 1.0,
+          "view_sales_profit_history": 1.0,
+          "view_current_date_supplier_prices": 1.0,
+          "view_supplier_returns_avg_rate": 0.9605734767025089
+        },
+        "modify_sku_price_evidence_hit_rate": {
+          "sales_history": 1.0,
+          "current_price": 1.0,
+          "cost_evidence": 1.0,
+          "quality_evidence": 1.0
+        }
+      },
+      "action_correction": {
+        "score": 0.4444444444444444,
+        "correct": 464,
+        "count": 1044,
+        "place_order_score": 0.43063932448733416,
+        "place_order_correct": 357,
+        "place_order_count": 829,
+        "modify_sku_price_score": 0.49767441860465117,
+        "modify_sku_price_correct": 107,
+        "modify_sku_price_count": 215,
+        "raw_quality_top1_hit": 0.34647550776583036,
+        "raw_quality_count": 837,
+        "raw_quality_top1_correct": 290,
+        "quality_regret_mean": 1.0715302270011948,
+        "quality_ratio_mean": 0.777455010099794,
+        "price_first_top1_hit": 0.4551971326164875,
+        "price_first_count": 837,
+        "price_first_correct": 381,
+        "price_regret_mean": 0.08065976588373437,
+        "price_premium_mean": 0.12090398356755382,
+        "order_qty_to_avg_daily_sales_mean": 6.926576300174001,
+        "order_qty_to_avg_daily_sales_count": 828,
+        "modify_price_distance_pct_mean": 17.916401878424665,
+        "modify_price_distance_pct_max": 205.45417680454173,
+        "modify_price_distance_pct_count": 215,
+        "modify_price_min": 0.47,
+        "modify_price_max": 7.99,
+        "quality_reference_sources": {
+          "return_rate": 1048
+        },
+        "skipped": {
+          "price_missing_history_reference": 4,
+          "order_missing_avg_daily_sales": 9,
+          "order_missing_quality_reference": 8,
+          "price_missing_quality_reference": 4
+        }
+      },
+      "strategy_consistency": {
+        "score": 0.4337210231386036,
+        "components": [
+          0.4001550091420954,
+          0.46728703713511177
+        ]
+      }
+    },
+    "run_type": "llm",
+    "source_path": "/Volumes/Data/logs/openai_gpt55_react/run_react_gpt55_hard_v2_20260521_110407"
+  }
+]

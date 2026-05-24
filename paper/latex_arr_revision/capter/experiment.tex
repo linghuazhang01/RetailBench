@@ -1,0 +1,11 @@
+\subsection{Main Benchmark Results}
+
+\input{table/selected_main_results}
+
+Table~\ref{tab:selected_main_results} reports the main results under our selected-run evaluation protocol. For each LLM, we select the best valid rollout according to a survival-first rule: we first choose the rollout with the longest survival horizon across the available agent frameworks, and use final net worth and total sales as tie-breakers when necessary. This protocol emphasizes operational viability, which is necessary for all downstream store-management objectives in RetailBench, while still reporting business outcomes for the selected run. The non-LLM heuristic is included as an oracle-style reference rather than a directly comparable language-agent baseline. It follows a manually specified quality-aware operating policy; Appendix~\ref{appendix:handcrafted_policy} provides the full rule specification.
+
+\subsection{Performance}
+
+The selected LLM runs show substantial heterogeneity in long-horizon operational performance. Under the survival-first selection protocol, survival ranges from 58 to 180 days, with an average of roughly 107 days. Only DeepSeek-V4-Pro and GPT-5.5 complete the full 180-day horizon; Kimi-K2.6 survives for 130 days, while the remaining selected runs terminate after 58 to 73 days. These results indicate that long-term operational viability remains difficult for most LLM agents. Among the full-horizon LLM runs, GPT-5.5 is more token-efficient, using roughly one-third of DeepSeek-V4-Pro's token budget. With the exception of DeepSeek-V4-Pro, most open-source models terminate substantially earlier.
+
+Full-horizon survival, however, is necessary but not sufficient for strong retail operation. The heuristic reference reaches a final net worth of 131{,}510.42 and total sales of 267{,}998, substantially outperforming the strongest LLM runs. GPT-5.5 achieves the highest selected LLM net worth, 24{,}350.98, while DeepSeek-V4-Pro achieves the highest selected LLM sales volume, 164{,}417. Relative to the heuristic, GPT-5.5 remains lower by 107{,}159.44 in final net worth, and DeepSeek-V4-Pro remains lower by 103{,}581 in total sales. These gaps suggest that current LLM agents may sustain operation over long horizons, but still struggle to translate continuity into effective pricing, sourcing, inventory control, and sales performance.

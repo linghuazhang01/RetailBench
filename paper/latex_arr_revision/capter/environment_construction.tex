@@ -1,0 +1,60 @@
+\subsection{Scope}
+RetailBench evaluates long-horizon, tool-using LLM agents in single-store supermarket operation. Table~\ref{tab:benchmark_axes} situates RetailBench relative to related retail, supply-chain, e-commerce, and long-horizon agent benchmarks. Prior work has studied retail simulation and promotion optimization~\citep{xia2023retailsynth,xia2024simulationretailpromotions}, transaction and demand modeling~\citep{wang2025freshretailnet,tkachuk2024consumertransactions}, web-based shopping agents~\citep{wang2025shoppingbench,3webshopscalablerealworldweb}, supply-chain and inventory control~\citep{OFCOURSE,inventory,leluc2023marlimmultiagentreinforcementlearning,invagentlargelanguagemodel,aimbenchevaluatingdecisionmakingbiases}, and long-running business-agent evaluation~\citep{backlund2025vendingbenchbenchmarklongtermcoherence,andonlabs2025vendingbench2}. These benchmarks are valuable, but they typically expose narrower decision surfaces or isolate individual operational subproblems. RetailBench instead places agents in a closed-loop, data-grounded environment that requires coordinated decisions across pricing, inventory, suppliers, shelf placement, customer feedback, external events, and cash-flow survival.
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{figures/retailbench_interaction_framework.png}
+\caption{RetailBench interaction framework. A tool-using LLM agent operates a simulated retail store through read, action, memory, and code tools. The simulator state is partially observable, and time advances from day $t$ to day $t+1$ only when the agent invokes the end-today action.}
+\label{fig:retailbench_framework}
+\vspace{-3mm}
+\end{figure*}
+
+\subsection{Interface}
+
+
+Figure~\ref{fig:retailbench_framework} summarizes RetailBench as an interaction between a tool-using agent and a partially observable retail simulator. Formally, each step is modeled as a POMDP:
+\begin{equation}
+\label{eq:pomdp}
+\mathcal{M}=(\mathcal{S},\mathcal{A},\mathcal{O},T,\Omega,R)
+\end{equation}
+Here, $\mathcal{S}$ is the simulator state, $\mathcal{A}$ is the tool-action space, $\mathcal{O}$ is the exposed observation space, $T$ is the transition model, $\Omega$ is the observation function, and $R$ records business outcomes. Appendix~\ref{app:state_action_spaces} provides the detailed state space $\mathcal{S}$ and action space $\mathcal{A}$ definitions. This abstraction matches Figure~\ref{fig:retailbench_framework}: the agent interacts only with tool-facing observations and actions, while the simulator privately maintains delayed inventory, shelf visibility, demand, supplier, feedback, and cash-flow consequences.
+
+The latent state on day $t$ and intra-day step $k$ is factorized as:
+\begin{equation}
+\label{eq:latent_state}
+S_{t,k} = (P_{t,k}, I_{t,k}, V_{t,k}, C_{t,k}, D_{t,k}, E_{t,k}, F_{t,k})
+\end{equation}
+Here, $P_{t,k}$ stores product attributes and prices, $I_{t,k}$ stores inventory and pending orders, $V_{t,k}$ stores the active shelf assortment, $C_{t,k}$ stores supplier candidates and conditions, $D_{t,k}$ stores demand factors, $E_{t,k}$ stores external news, and $F_{t,k}$ stores financial accounting. These factors instantiate a single-store supermarket where pricing, replenishment, shelf placement, supplier choice, customer feedback, and cash-flow pressure interact over multiple days.
+
+At each step, the agent selects a tool action from three tool groups:
+\begin{equation}
+\label{eq:agent_interaction}
+\begin{aligned}
+a_{t,k} &\in \mathcal{A},\\
+\mathcal{A} &= \mathcal{A}^{\mathrm{read}}
+\cup \mathcal{A}^{\mathrm{other}}
+\cup \mathcal{A}^{\mathrm{act}},\\
+o_{t,k} &= \Omega(S_{t,k},a_{t,k}), \quad a_{t,k}\in\mathcal{A}^{\mathrm{read}}\\
+z_{t,k} &= G(o_{\le t,k},a_{t,k}), \quad a_{t,k}\in\mathcal{A}^{\mathrm{other}}\\
+S_{t,k+1} &= T(S_{t,k},a_{t,k}), \quad a_{t,k}\in\mathcal{A}^{\mathrm{act}}
+\end{aligned}
+\end{equation}
+The read-only subset $\mathcal{A}^{\mathrm{read}}$ provides access to tools for querying funds, inventory levels, shelf status, product prices, inventory costs, sales and profit histories, supplier quotes and price histories, notes, and, when enabled, review ratings, supplier return rates, and news summaries. These tools expose observations $o_{t,k}$ only; they do not disclose latent utilities, hidden news-impact parameters, raw supplier-quality scores, or any other privileged simulator state.
+
+The auxiliary subset $\mathcal{A}^{\mathrm{other}}$ contains constrained analysis tools, the \texttt{memory} tool, and \texttt{execute\_code}. The \texttt{memory} tool allows the agent to write long-form memory entries, whereas \texttt{execute\_code} can aggregate observations and call read-only tools inside a sandboxed environment. Neither tool can modify prices, orders, shelf placement, or inventory.
+
+The state-changing subset $\mathcal{A}^{\mathrm{act}}$ comprises product price updates, replenishment orders, shelf-assortment updates, cross-day note writing, and day termination. Once the agent invokes \texttt{end\_today}, the simulator applies the following day-level transition:
+\begin{equation}
+\label{eq:end_today_transition}
+S_{t+1,0}=T(S_{t,k},\mathtt{end\_today})\equiv T_{\mathrm{day}}(S_{t,k}).
+\end{equation}
+Here, $T_{\mathrm{day}}$ denotes the day-level transition induced by \texttt{end\_today}. It processes deliveries, shelf-visible demand, sales, reviews, returns, expiration, rent, cash-flow updates, and supplier/news changes. The agent's goal is to sustain store operation while improving sales, gross profit, net worth, and operating duration.
+
+\subsection{Data}
+RetailBench combines real-world grocery retail records with controlled synthetic interaction signals. Static and historical components, including product identities, prices, sales histories, traffic statistics, and procurement-cost priors, are derived from real retail data. Dynamic signals, such as reviews and news, are generated from external real-world corpora. 
+
+The primary data source is the Dominick's dataset~\citep{DominicksDataset}, which provides store-level grocery records on product categories, product-level sales, prices, and cost-related signals. We use these records to define the product universe, initialize prices, estimate demand and traffic patterns, and construct procurement-cost priors. From the 20 available categories, we select 96 products with sufficiently complete records for consistent estimation of price, sales, and category-level substitution patterns.
+
+Reviews and news are generated through LLM-assisted procedures grounded in real-world corpora. Amazon Reviews 2023~\citep{hou2024bridging} is used to construct category-specific review pools annotated with ratings, sentiment, and product-aspect dimensions. During simulation, realized sales trigger product-level reviews whose ratings depend on supplier quality, with comments sampled from the corresponding category--rating--aspect pool. The financial-news-articles dataset~\citep{ashraq2025financialNewsArticles} is used to construct neutral, category-level, and product-level news events. Agents observe only event titles, content, and historical records, while hidden metadata determines each event's demand- or supply-side effects.
+\subsection{Modules}
+\label{sec:module_logic}
+The simulator consists of the seven modules shown in Figure~\ref{fig:retailbench_environment}: Inventory, Suppliers \& Orders, Shelf, Customer Demand, Reviews \& Returns, News Events, and Finance \& Records. These modules share static product attributes and are coupled through daily transitions that jointly update delayed deliveries, shelf visibility, sales, feedback, news effects, inventory aging, and cash-flow accounting. Appendix~\ref{app:simulator_modules} and Appendix~\ref{app:simulator_update_equations} provide the detailed module definitions, state variables, and day-level update equations.

@@ -1,0 +1,24 @@
+\subsection{Environment Configuration}
+
+All evaluations are conducted under a fixed RetailBench environment configuration. Specifically, the environment includes 96 products spanning 20 product categories, with five candidate suppliers for each product whose price--quality profiles evolve over time. It also incorporates customer review feedback and daily news events. The environment further specifies an initial budget of 30{,}000, a daily rent of 600, an inventory capacity of 15{,}000 units, and a shelf capacity of 40 products. The complete parameter settings are provided in Appendix~\ref{appendix:env_setting}.
+
+\subsection{Models and Agent Frameworks}
+
+We instantiate LLM agents with three prompting-based frameworks when available: ReAct~\citep{yao2023react}, Reflection~\citep{reflection}, and Plan-and-Act~\citep{erdogan2025planandactimprovingplanningagents}. These frameworks represent common tool-use patterns for LLM agents and interact with RetailBench through the same tool interface.
+
+All evaluations use a fixed RetailBench environment configuration. We evaluate seven contemporary LLMs and report, for each model, its strongest completed run among the available framework settings. This selected-run protocol is intended to characterize the best observed capability of each model under our evaluated agent wrappers, rather than its average framework-agnostic performance. It also mitigates distortions caused by missing runs and framework-specific variance. Due to API cost constraints, OpenAI GPT-5.5 is evaluated only under ReAct~\citep{yao2023react}. We additionally include a hand-crafted store-operation policy as an oracle-style non-LLM reference; Appendix~\ref{appendix:handcrafted_policy} provides the full rule specification.
+\subsection{Metrics}
+
+We group the evaluation metrics into five categories, each capturing a distinct operational dimension of agent performance in RetailBench. We use $\uparrow$ and $\downarrow$ to indicate metrics for which higher and lower values are preferred, respectively; tool-use metrics are reported as diagnostic measures rather than direct optimization objectives.
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Operational viability}: \textbf{Final Net Worth} ($\uparrow$), the terminal asset value including cash, on-hand inventory value, and pending-order value; and \textbf{Survival Days} ($\uparrow$), the number of days the agent keeps the store operational.
+
+    \item \textbf{Sales effectiveness}: \textbf{Final Total Sales} ($\uparrow$), the cumulative number of units sold over the evaluation horizon; \textbf{Daily Sold Products} ($\uparrow$), the average number of distinct products sold per day; and \textbf{Return Ratio} ($\downarrow$), the fraction of sold units that are returned.
+
+    \item \textbf{Inventory control}: \textbf{Stockout Days} ($\downarrow$), the number of days on which at least one product has insufficient inventory; and \textbf{Expired Ratio} ($\downarrow$), the fraction of expired units among all units that are either sold or expired.
+
+    \item \textbf{Tool-use behavior}: \textbf{Direct Tool Calls per Day} ($\uparrow$), the number of top-level tool calls made outside code execution, and \textbf{Total Tool Calls per Day} ($\uparrow$), which additionally includes tool calls issued through code execution. These metrics characterize the agent's reliance on direct tool interaction and code-mediated tool use.
+
+    \item \textbf{Token use}: \textbf{Tokens per Day} ($\downarrow$), the average daily token consumption during evaluation.
+\end{itemize}

@@ -1,0 +1,115 @@
+\documentclass[11pt,fontset=none]{ctexart}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{PingFang SC}
+\setCJKmonofont{PingFang SC}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue
+}
+
+\setlist[itemize]{leftmargin=1.7em,itemsep=0.25em,topsep=0.35em}
+\setlist[enumerate]{leftmargin=1.7em,itemsep=0.25em,topsep=0.35em}
+
+\title{RetailBench ARR Revision 与 paper/latex 版本差异说明}
+\author{RetailBench Revision Notes}
+\date{2026-05-25}
+
+\begin{document}
+\maketitle
+
+\section{目的}
+
+本文档说明当前 \texttt{paper/latex\_arr\_revision} 版本相对于
+\texttt{paper/latex} 版本的主要差异。比较范围以两个目录中当前的 LaTeX
+源码、表格、图表和参考文献文件为准，不包含外部实验原始日志。
+
+\section{总体结论}
+
+\texttt{paper/latex\_arr\_revision} 已经从早期的 ``simulator + method''
+叙述转向 ``benchmark + evaluation + diagnostic analysis'' 叙述。新版主线更集中：
+它强调 RetailBench 是一个 data-grounded、long-horizon、partially observable
+retail operation benchmark，并围绕 environment construction、evaluation
+protocol、main results 和 four-stage diagnostic analysis 展开。旧版
+\texttt{paper/latex} 保留了更多早期章节结构，例如 simulator execution logic、
+standalone results section、prompt/framework appendix，以及部分旧实验叙述。
+
+\section{结构差异}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{p{0.28\linewidth}p{0.31\linewidth}p{0.31\linewidth}}
+\toprule
+维度 & \texttt{paper/latex} & \texttt{latex\_arr\_revision} \\
+\midrule
+正文组织 & Introduction, Environment, Simulator Module Design, Experiment Settings, Results, Analysis, Related Work & Introduction, Environment Construction, Evaluation Protocol, Experiments, Analysis, Related Work \\
+环境描述 & 更偏实现流程和模块执行逻辑 & 以 POMDP、Figure 1/Figure 2、数据源和模块设计为主线 \\
+实验描述 & 分散在 Experiment Settings、Results、Analysis 中 & 合并为 evaluation protocol、main experiment results 和 four-stage diagnostics \\
+附录 & 包含环境、rollout、prompt、agent framework 等多个 appendix & 当前主 PDF 保留环境配置与 state/action/module/update 细节，减少正文负担 \\
+约束文件 & 无专门约束文件 & 新增 \texttt{paper\_constraint.md}，约束页数、Figure 位置、术语和 product 命名 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{内容差异}
+
+\begin{enumerate}
+  \item \textbf{Benchmark positioning 更明确。}
+  新版 introduction 和 related work 将 RetailBench 定位为 long-horizon retail
+  operation benchmark，减少对短任务或通用 agent benchmark 的泛泛比较，并补充
+  LifelongAgentBench 和 TheAgentCompany 等 long-horizon/workplace agent benchmark。
+
+  \item \textbf{Environment construction 更结构化。}
+  新版将环境描述拆为 benchmark、POMDP、data、modules 四个逻辑层次。正文只保留
+  高层说明，详细 state space、action space、module definitions、day-level update
+  equations 和 hand-crafted policy 放到 appendix。
+
+  \item \textbf{Figure 设计被重排。}
+  新版将 retail simulator module figure 作为 Figure 1 放在第一页右栏顶部，并将
+  agent--simulator interaction framework 作为 Figure 2 双栏展示。旧版图表更接近初始
+  draw.io 版本，缺少 shelf assortment 和当前交互框架的统一表达。
+
+  \item \textbf{实验结果改为当前 paper-submit 数据。}
+  新版实验部分基于 \texttt{paper\_submit\_data/outputs/report.md} 和四阶段分析报告，
+  汇总 7 个模型、3 个 frameworks 以及 hand-crafted policy 的最佳结果。Metrics
+  被重新组织为 viability、sales capability、inventory control、tool use 和 inference cost。
+
+  \item \textbf{Analysis 改为 four-stage diagnostics。}
+  新版 Analysis 围绕 evidence acquisition、evidence-to-action conversion、action quality
+  和 long-horizon adaptation 四个 stage 展开，并配套单栏图表。旧版 analysis 更接近早期
+  failure case 和行为观察汇总。
+
+  \item \textbf{术语和表格做了收敛。}
+  新版统一使用 frameworks，避免 scaffold；全局用 product/products 替代 SKU/SKUs；
+  Table 1 被移入 appendix，并调整 benchmark 引用和列设计。
+\end{enumerate}
+
+\section{引用审查结果}
+
+对当前 \texttt{latex\_arr\_revision} 的 \texttt{.tex} 文件进行引用抽取后，所有正文
+citation key 都能在 \texttt{custom.bib} 中找到，未发现缺失 key。进一步检查 arXiv ID、
+DOI 和数据集 URL 后，当前版本未发现明确的虚假引用。已做的保守修正包括：
+
+\begin{itemize}
+  \item 修正 McFadden 条目的 booktitle 拼写：\texttt{Fontiers} 改为 \texttt{Frontiers}。
+  \item 为 Amazon Reviews 2023 对应的 \texttt{hou2024bridging} 条目补充 arXiv metadata 和 URL。
+  \item MNL 模型引用中去掉弱相关的书评类引用 \texttt{Uncles01041987}，保留经典 McFadden 引用。
+  \item 移除 revision 目录中未被主文档引用的旧 CAEC/FCR 文件，避免源码包内部出现过期方法叙述。
+\end{itemize}
+
+\section{提交建议}
+
+建议提交 \texttt{paper/latex\_arr\_revision} 的 LaTeX source、最终 PDF、必要图表、
+表格、参考文献和本文档 PDF；同时提交 \texttt{paper\_submit\_data} 中用于支撑当前实验结果的
+分析脚本和输出报告。LaTeX 中间文件、\texttt{.DS\_Store}、\texttt{*.aux}、\texttt{*.log}、
+\texttt{*.synctex.gz} 等构建产物不应提交。
+
+\end{document}

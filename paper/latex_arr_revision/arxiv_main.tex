@@ -1,0 +1,126 @@
+\documentclass[11pt]{article}
+
+% Change "review" to "final" to generate the final (sometimes called camera-ready) version.
+% Change to "preprint" to generate a non-anonymous version with page numbers.
+\usepackage[preprint]{acl}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{fancyvrb}
+\usepackage{fvextra}
+\usepackage{latexsym}
+\usepackage{amsmath}
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{placeins}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage[table]{xcolor}  % 颜色 + 表格单元格背景
+\usepackage{enumitem}
+\usepackage{pifont}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\newcommand{\cmark}{\textcolor{green!45!black}{\ding{51}}}
+\newcommand{\xmark}{\textcolor{red!70!black}{\ding{55}}}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+% This is also not strictly necessary, and may be commented out.
+% However, it will improve the aesthetics of text in
+% the typewriter font.
+\usepackage{inconsolata}
+
+% Hyperlinks for arXiv preprint
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=blue
+}
+
+
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+\title{RetailBench: Benchmarking long horizon reasoning and coherent decision making of LLM agents in realistic retail environments}
+
+\author{
+Linghua Zhang\textsuperscript{1}
+\quad
+Jun Wang\textsuperscript{2}
+\quad
+Jingtong Wu\textsuperscript{2}
+\quad
+Zhisong Zhang\textsuperscript{\dag} \\
+\textsuperscript{1}Ant Group
+\quad
+\textsuperscript{2}City University of Hong Kong \\
+\texttt{zlh20011228@gmail.com, nanrong.wj@ant-intl.com} \\
+\texttt{jingtong.wujt@ant-intl.com, zhisong.zhang@cityu.edu.hk}
+}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+\input{capter/abstract}
+\end{abstract}
+
+\section{Introduction}
+\label{sec:intro}
+\input{./capter/introduction.tex}
+
+\section{Environment Construction}
+\label{sec:env}
+\input{./capter/environment_construction.tex}
+
+\section{Evaluation Protocol}
+\label{sec:evaluation_protocol}
+\input{./capter/evaluation_protocol.tex}
+
+\section{Experiments}
+\label{sec:experiment}
+\input{./capter/experiment.tex}
+
+\section{Analysis}
+\label{sec:failure_pattern_analysis}
+\input{./capter/failure_pattern_analysis.tex}
+
+\section{Related Work}
+\label{sec:related_work}
+\input{./capter/related_work.tex}
+
+\section{Conclusion}
+\label{sec:conclusion}
+\input{capter/conclusion}
+
+\section{Limitation}
+\label{sec:limitation}
+\input{capter/limitations}
+
+% Bibliography entries for the entire Anthology, followed by custom entries
+%\bibliography{anthology,custom}
+% Custom bibliography entries only
+\bibliography{custom}
+
+\appendix
+\section{Environment Configuration Details}
+\label{appendix:env_details}
+\input{./capter/appendix_a.tex}
+
+\end{document}

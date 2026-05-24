@@ -1,0 +1,1109 @@
+{
+  "max_sample_lines_per_run": 30,
+  "summary": {
+    "all_llm": {
+      "runs": 19,
+      "order_lines": 5136,
+      "quality_first_rate": 0.21537293197391297,
+      "price_first_rate": 0.5563498299989788,
+      "avg_quality_rank": 3.306884824132205,
+      "avg_price_rank": 1.831623678792948
+    },
+    "survival_best_llm": {
+      "runs": 7,
+      "order_lines": 2611,
+      "quality_first_rate": 0.240721336518406,
+      "price_first_rate": 0.5583457078762128,
+      "avg_quality_rank": 3.1990624706771467,
+      "avg_price_rank": 1.8006219873745226,
+      "non_quality_first_lines": 163,
+      "non_quality_first_price_first_rate": 0.656441717791411,
+      "supplier_price_query_rate": 0.9955156950672646,
+      "quality_proxy_query_rate": 0.6143497757847534,
+      "return_rate_query_rate": 0.4349775784753363,
+      "rating_query_rate": 0.6053811659192825,
+      "execute_code_quality_mention_rate": 0.32286995515695066,
+      "execute_code_price_priority_mention_rate": 0.5560538116591929
+    }
+  },
+  "by_run": [
+    {
+      "model": "MiniMax-M2.5",
+      "framework": "plan_and_act",
+      "run_id": "run_plan_and_act_MiniMax-M2.5_caec_off_fcr_off_run1",
+      "is_survival_best": true,
+      "order_lines": 178,
+      "quality_first_rate": 0.1404494382022472,
+      "price_first_rate": 0.5898876404494382,
+      "avg_quality_rank": 3.455056179775281,
+      "avg_price_rank": 1.949438202247191,
+      "quality_proxy_query_rate": 0.43333333333333335,
+      "sample_order_lines": 30
+    },
+    {
+      "model": "DeepSeek-V4-Pro",
+      "framework": "plan_and_act",
+      "run_id": "run_plan_and_act_deepseek-v4-pro_caec_off_fcr_off_run1",
+      "is_survival_best": true,
+      "order_lines": 850,
+      "quality_first_rate": 0.23255813953488372,
+      "price_first_rate": 0.5569767441860465,
+      "avg_quality_rank": 3.2872093023255813,
+      "avg_price_rank": 1.666279069767442,
+      "quality_proxy_query_rate": 1.0,
+      "sample_order_lines": 36
+    },
+    {
+      "model": "GLM-5.1",
+      "framework": "react",
+      "run_id": "run_react_glm-5.1_caec_off_fcr_off_run1",
+      "is_survival_best": true,
+      "order_lines": 47,
+      "quality_first_rate": 0.3191489361702128,
+      "price_first_rate": 0.1702127659574468,
+      "avg_quality_rank": 2.5531914893617023,
+      "avg_price_rank": 3.234042553191489,
+      "quality_proxy_query_rate": 0.875,
+      "sample_order_lines": 32
+    },
+    {
+      "model": "Kimi-K2.6",
+      "framework": "react",
+      "run_id": "run_react_kimi-k2.6_caec_off_fcr_off_run1",
+      "is_survival_best": true,
+      "order_lines": 316,
+      "quality_first_rate": 0.12538226299694188,
+      "price_first_rate": 0.8134556574923547,
+      "avg_quality_rank": 3.8929663608562692,
+      "avg_price_rank": 1.2813455657492354,
+      "quality_proxy_query_rate": 1.0,
+      "sample_order_lines": 30
+    },
+    {
+      "model": "Qwen3.5-397B-A17B",
+      "framework": "reflection",
+      "run_id": "run_reflection_qwen3.5-397b-a17b_caec_off_fcr_off_run1",
+      "is_survival_best": true,
+      "order_lines": 320,
+      "quality_first_rate": 0.16875,
+      "price_first_rate": 0.61875,
+      "avg_quality_rank": 3.503125,
+      "avg_price_rank": 1.875,
+      "quality_proxy_query_rate": 0.0,
+      "sample_order_lines": 33
+    },
+    {
+      "model": "Grok-4.3",
+      "framework": "react",
+      "run_id": "run_react_x-ai_grok-4.3_run1",
+      "is_survival_best": true,
+      "order_lines": 71,
+      "quality_first_rate": 0.14084507042253522,
+      "price_first_rate": 0.5492957746478874,
+      "avg_quality_rank": 3.3661971830985915,
+      "avg_price_rank": 2.0,
+      "quality_proxy_query_rate": 0.0,
+      "sample_order_lines": 32
+    },
+    {
+      "model": "GPT-5.5",
+      "framework": "react",
+      "run_id": "run_react_gpt55_hard_v2_20260521_110407",
+      "is_survival_best": true,
+      "order_lines": 829,
+      "quality_first_rate": 0.34647550776583036,
+      "price_first_rate": 0.4551971326164875,
+      "avg_quality_rank": 2.6941457586618878,
+      "avg_price_rank": 1.977299880525687,
+      "quality_proxy_query_rate": 1.0,
+      "sample_order_lines": 30
+    }
+  ],
+  "example_failures": [
+    {
+      "model": "MiniMax-M2.5",
+      "framework": "plan_and_act",
+      "run_id": "run_plan_and_act_MiniMax-M2.5_caec_off_fcr_off_run1",
+      "is_survival_best": true,
+      "current_date": "1991-09-07",
+      "sku_id": "4400000004",
+      "selected_supplier": "supplier_3",
+      "quantity": 8,
+      "candidate_count": 5,
+      "selected_price_rank": 1,
+      "selected_quality_rank": 5,
+      "selected_quality_score": 1.8091,
+      "best_quality_supplier": "supplier_1",
+      "best_quality_score": 4.6812,
+      "selected_is_cheapest": true,
+      "selected_is_quality_best": false,
+      "pre_action_context": {
+        "relevant_tools": {
+          "view_funds_and_date": 2,
+          "view_inventory": 1,
+          "view_shelf_status": 1,
+          "view_today_news": 1,
+          "view_current_date_supplier_prices": 2,
+          "execute_code": 4
+        },
+        "price_tool_count": 2,
+        "quality_proxy_tool_count": 0,
+        "quality_proxy_tools": {},
+        "had_supplier_price_query": true,
+        "had_supplier_price_history": false,
+        "had_quality_proxy_query": false,
+        "had_return_rate_query": false,
+        "had_rating_query": false,
+        "execute_code_quality_mentions": 0,
+        "execute_code_price_priority_mentions": 4,
+        "execute_code_return_mentions": 0,
+        "snippets": [
+          "from datetime import date, timedelta # Get supplier prices data sp1 = view_current_date_supplier_prices([\"3828111129\", \"3700060571\", \"3700060511\", \"4200013000\", \"3040000048\", \"8066095605\", \"8248812345\", \"7289000011\", \"5100001251\", \"5100000011\", \"2400032320\", \"2400032230\", \"5100002421\", \"8000000280\", \"8000000245\", \"8660000013\", \"8000000325\", \"8660000033\"])...",
+          "# Calculate optimal orders for initial assortment # Focus on categories with longer shelf life and diverse selection # Initial assortment with cheapest suppliers assortment = [ # Bathroom Tissues (37-38 days) {\"sku_id\": \"3828111129\", \"supplier\": \"supplier_3\", \"cost\": 0.4853, \"category\": \"Bathroom Tissues\"}, {\"sku_id\": \"3700060571\", \"supplier\": \"supplier_4..."
+        ]
+      },
+      "candidates": [
+        {
+          "supplier_id": "supplier_1",
+          "price": 0.3725,
+          "quality_score": 4.6812,
+          "price_rank": 3,
+          "quality_rank": 1
+        },
+        {
+          "supplier_id": "supplier_4",
+          "price": 0.5409,
+          "quality_score": 4.4305,
+          "price_rank": 5,
+          "quality_rank": 2
+        },
+        {
+          "supplier_id": "supplier_5",
+          "price": 0.537,
+          "quality_score": 4.4254,
+          "price_rank": 4,
+          "quality_rank": 3
+        },
+        {
+          "supplier_id": "supplier_2",
+          "price": 0.3541,
+          "quality_score": 2.0695,
+          "price_rank": 2,
+          "quality_rank": 4
+        },
+        {
+          "supplier_id": "supplier_3",
+          "price": 0.3519,
+          "quality_score": 1.8091,
+          "price_rank": 1,
+          "quality_rank": 5
+        }
+      ]
+    },
+    {
+      "model": "MiniMax-M2.5",
+      "framework": "plan_and_act",
+      "run_id": "run_plan_and_act_MiniMax-M2.5_caec_off_fcr_off_run1",
+      "is_survival_best": true,
+      "current_date": "1991-09-07",
+      "sku_id": "1862702345",
+      "selected_supplier": "supplier_3",
+      "quantity": 8,
+      "candidate_count": 5,
+      "selected_price_rank": 1,
+      "selected_quality_rank": 5,
+      "selected_quality_score": 1.7116,
+      "best_quality_supplier": "supplier_1",
+      "best_quality_score": 4.9566,
+      "selected_is_cheapest": true,
+      "selected_is_quality_best": false,
+      "pre_action_context": {
+        "relevant_tools": {
+          "view_funds_and_date": 2,
+          "view_inventory": 1,
+          "view_shelf_status": 1,
+          "view_today_news": 1,
+          "view_current_date_supplier_prices": 2,
+          "execute_code": 4
+        },
+        "price_tool_count": 2,
+        "quality_proxy_tool_count": 0,
+        "quality_proxy_tools": {},
+        "had_supplier_price_query": true,
+        "had_supplier_price_history": false,
+        "had_quality_proxy_query": false,
+        "had_return_rate_query": false,
+        "had_rating_query": false,
+        "execute_code_quality_mentions": 0,
+        "execute_code_price_priority_mentions": 4,
+        "execute_code_return_mentions": 0,
+        "snippets": [
+          "from datetime import date, timedelta # Get supplier prices data sp1 = view_current_date_supplier_prices([\"3828111129\", \"3700060571\", \"3700060511\", \"4200013000\", \"3040000048\", \"8066095605\", \"8248812345\", \"7289000011\", \"5100001251\", \"5100000011\", \"2400032320\", \"2400032230\", \"5100002421\", \"8000000280\", \"8000000245\", \"8660000013\", \"8000000325\", \"8660000033\"])...",
+          "# Calculate optimal orders for initial assortment # Focus on categories with longer shelf life and diverse selection # Initial assortment with cheapest suppliers assortment = [ # Bathroom Tissues (37-38 days) {\"sku_id\": \"3828111129\", \"supplier\": \"supplier_3\", \"cost\": 0.4853, \"category\": \"Bathroom Tissues\"}, {\"sku_id\": \"3700060571\", \"supplier\": \"supplier_4..."
+        ]
+      },
+      "candidates": [
+        {
+          "supplier_id": "supplier_1",
+          "price": 1.0346,
+          "quality_score": 4.9566,
+          "price_rank": 5,
+          "quality_rank": 1
+        },
+        {
+          "supplier_id": "supplier_2",
+          "price": 0.9639,
+          "quality_score": 4.9457,
+          "price_rank": 4,
+          "quality_rank": 2
+        },
+        {
+          "supplier_id": "supplier_4",
+          "price": 0.876,
+          "quality_score": 4.6949,
+          "price_rank": 3,
+          "quality_rank": 3
+        },
+        {
+          "supplier_id": "supplier_5",
+          "price": 0.7971,
+          "quality_score": 3.0701,
+          "price_rank": 2,
+          "quality_rank": 4
+        },
+        {
+          "supplier_id": "supplier_3",
+          "price": 0.7922,
+          "quality_score": 1.7116,
+          "price_rank": 1,
+          "quality_rank": 5
+        }
+      ]
+    },
+    {
+      "model": "GLM-5.1",
+      "framework": "react",
+      "run_id": "run_react_glm-5.1_caec_off_fcr_off_run1",
+      "is_survival_best": true,
+      "current_date": "1991-09-10",
+      "sku_id": "3700060511",
+      "selected_supplier": "supplier_4",
+      "quantity": 2000,
+      "candidate_count": 5,
+      "selected_price_rank": 1,
+      "selected_quality_rank": 5,
+      "selected_quality_score": 1.6182,
+      "best_quality_supplier": "supplier_2",
+      "best_quality_score": 4.848,
+      "selected_is_cheapest": true,
+      "selected_is_quality_best": false,
+      "pre_action_context": {
+        "relevant_tools": {
+          "view_funds_and_date": 3,
+          "view_shelf_status": 5,
+          "view_inventory": 6,
+          "execute_code": 5,
+          "view_today_news": 1,
+          "view_news_detail": 1,
+          "view_current_date_supplier_prices": 2,
+          "view_sku_prices": 2,
+          "view_sales_profit_history": 2,
+          "view_sku_avg_ratings": 1
+        },
+        "price_tool_count": 2,
+        "quality_proxy_tool_count": 1,
+        "quality_proxy_tools": {
+          "view_sku_avg_ratings": 1
+        },
+        "had_supplier_price_query": true,
+        "had_supplier_price_history": false,
+        "had_quality_proxy_query": true,
+        "had_return_rate_query": false,
+        "had_rating_query": true,
+        "execute_code_quality_mentions": 0,
+        "execute_code_price_priority_mentions": 0,
+        "execute_code_return_mentions": 0,
+        "snippets": []
+      },
+      "candidates": [
+        {
+          "supplier_id": "supplier_2",
+          "price": 0.5654,
+          "quality_score": 4.848,
+          "price_rank": 2,
+          "quality_rank": 1
+        },
+        {
+          "supplier_id": "supplier_1",
+          "price": 0.7722,
+          "quality_score": 4.8137,
+          "price_rank": 3,
+          "quality_rank": 2
+        },
+        {
+          "supplier_id": "supplier_3",
+          "price": 0.8166,
+          "quality_score": 4.7334,
+          "price_rank": 4,
+          "quality_rank": 3
+        },
+        {
+          "supplier_id": "supplier_5",
+          "price": 0.826,
+          "quality_score": 4.6623,
+          "price_rank": 5,
+          "quality_rank": 4
+        },
+        {
+          "supplier_id": "supplier_4",
+          "price": 0.4818,
+          "quality_score": 1.6182,
+          "price_rank": 1,
+          "quality_rank": 5
+        }
+      ]
+    },
+    {
+      "model": "GLM-5.1",
+      "framework": "react",
+      "run_id": "run_react_glm-5.1_caec_off_fcr_off_run1",
+      "is_survival_best": true,
+      "current_date": "1991-09-10",
+      "sku_id": "8248812345",
+      "selected_supplier": "supplier_3",
+      "quantity": 100,
+      "candidate_count": 5,
+      "selected_price_rank": 1,
+      "selected_quality_rank": 5,
+      "selected_quality_score": 1.7637,
+      "best_quality_supplier": "supplier_2",
+      "best_quality_score": 4.731,
+      "selected_is_cheapest": true,
+      "selected_is_quality_best": false,
+      "pre_action_context": {
+        "relevant_tools": {
+          "view_funds_and_date": 5,
+          "view_shelf_status": 6,
+          "view_inventory": 7,
+          "execute_code": 6,
+          "view_today_news": 2,
+          "view_news_detail": 1,
+          "view_current_date_supplier_prices": 6,
+          "view_sku_prices": 2,
+          "view_sales_profit_history": 2,
+          "view_sku_avg_ratings": 1,
+          "place_order": 2
+        },
+        "price_tool_count": 6,
+        "quality_proxy_tool_count": 1,
+        "quality_proxy_tools": {
+          "view_sku_avg_ratings": 1
+        },
+        "had_supplier_price_query": true,
+        "had_supplier_price_history": false,
+        "had_quality_proxy_query": true,
+        "had_return_rate_query": false,
+        "had_rating_query": true,
+        "execute_code_quality_mentions": 0,
+        "execute_code_price_priority_mentions": 0,
+        "execute_code_return_mentions": 0,
+        "snippets": []
+      },
+      "candidates": [
+        {
+          "supplier_id": "supplier_2",
+          "price": 4.995,
+          "quality_score": 4.731,
+          "price_rank": 4,
+          "quality_rank": 1
+        },
+        {
+          "supplier_id": "supplier_5",
+          "price": 4.6219,
+          "quality_score": 4.646,
+          "price_rank": 3,
+          "quality_rank": 2
+        },
+        {
+          "supplier_id": "supplier_1",
+          "price": 5.0022,
+          "quality_score": 3.8054,
+          "price_rank": 5,
+          "quality_rank": 3
+        },
+        {
+          "supplier_id": "supplier_4",
+          "price": 3.5738,
+          "quality_score": 2.0975,
+          "price_rank": 2,
+          "quality_rank": 4
+        },
+        {
+          "supplier_id": "supplier_3",
+          "price": 3.3292,
+          "quality_score": 1.7637,
+          "price_rank": 1,
+          "quality_rank": 5
+        }
+      ]
+    },
+    {
+      "model": "Kimi-K2.6",
+      "framework": "react",
+      "run_id": "run_react_kimi-k2.6_caec_off_fcr_off_run1",
+      "is_survival_best": true,
+      "current_date": "1991-09-07",
+      "sku_id": "3828153081",
+      "selected_supplier": "supplier_1",
+      "quantity": 874,
+      "candidate_count": 5,
+      "selected_price_rank": 1,
+      "selected_quality_rank": 5,
+      "selected_quality_score": 2.0197,
+      "best_quality_supplier": "supplier_2",
+      "best_quality_score": 4.9911,
+      "selected_is_cheapest": true,
+      "selected_is_quality_best": false,
+      "pre_action_context": {
+        "relevant_tools": {
+          "view_funds_and_date": 2,
+          "view_shelf_status": 3,
+          "view_inventory": 2,
+          "view_sku_prices": 2,
+          "view_current_date_supplier_prices": 5,
+          "view_sku_inventory_cost": 1,
+          "view_sales_profit_history": 5,
+          "view_today_news": 3,
+          "view_notes": 1,
+          "execute_code": 7,
+          "view_sku_avg_ratings": 3,
+          "view_news_detail": 2,
+          "view_supplier_returns_avg_rate": 1
+        },
+        "price_tool_count": 5,
+        "quality_proxy_tool_count": 4,
+        "quality_proxy_tools": {
+          "view_sku_avg_ratings": 3,
+          "view_supplier_returns_avg_rate": 1
+        },
+        "had_supplier_price_query": true,
+        "had_supplier_price_history": false,
+        "had_quality_proxy_query": true,
+        "had_return_rate_query": true,
+        "had_rating_query": true,
+        "execute_code_quality_mentions": 0,
+        "execute_code_price_priority_mentions": 1,
+        "execute_code_return_mentions": 0,
+        "snippets": [
+          "from datetime import date, timedelta today = date.fromisoformat(current_date) start14 = str(today - timedelta(days=14)) sales = view_sales_profit_history(sku_ids, start14, current_date) prices = view_current_date_supplier_prices(sku_ids) selected = [ {'sku_id': '2100061223', 'supplier': 'supplier_4'}, {'sku_id': '3828153081', 'supplier': 'supplier_1'}, {'..."
+        ]
+      },
+      "candidates": [
+        {
+          "supplier_id": "supplier_2",
+          "price": 0.5018,
+          "quality_score": 4.9911,
+          "price_rank": 5,
+          "quality_rank": 1
+        },
+        {
+          "supplier_id": "supplier_3",
+          "price": 0.4752,
+          "quality_score": 4.9717,
+          "price_rank": 4,
+          "quality_rank": 2
+        },
+        {
+          "supplier_id": "supplier_5",
+          "price": 0.4728,
+          "quality_score": 3.8794,
+          "price_rank": 3,
+          "quality_rank": 3
+        },
+        {
+          "supplier_id": "supplier_4",
+          "price": 0.4555,
+          "quality_score": 3.1254,
+          "price_rank": 2,
+          "quality_rank": 4
+        },
+        {
+          "supplier_id": "supplier_1",
+          "price": 0.3753,
+          "quality_score": 2.0197,
+          "price_rank": 1,
+          "quality_rank": 5
+        }
+      ]
+    },
+    {
+      "model": "Kimi-K2.6",
+      "framework": "react",
+      "run_id": "run_react_kimi-k2.6_caec_off_fcr_off_run1",
+      "is_survival_best": true,
+      "current_date": "1991-09-07",
+      "sku_id": "3040000048",
+      "selected_supplier": "supplier_1",
+      "quantity": 326,
+      "candidate_count": 5,
+      "selected_price_rank": 1,
+      "selected_quality_rank": 5,
+      "selected_quality_score": 1.7867,
+      "best_quality_supplier": "supplier_3",
+      "best_quality_score": 4.9428,
+      "selected_is_cheapest": true,
+      "selected_is_quality_best": false,
+      "pre_action_context": {
+        "relevant_tools": {
+          "view_funds_and_date": 2,
+          "view_shelf_status": 3,
+          "view_inventory": 2,
+          "view_sku_prices": 2,
+          "view_current_date_supplier_prices": 5,
+          "view_sku_inventory_cost": 1,
+          "view_sales_profit_history": 5,
+          "view_today_news": 3,
+          "view_notes": 1,
+          "execute_code": 7,
+          "view_sku_avg_ratings": 3,
+          "view_news_detail": 2
+        },
+        "price_tool_count": 5,
+        "quality_proxy_tool_count": 3,
+        "quality_proxy_tools": {
+          "view_sku_avg_ratings": 3
+        },
+        "had_supplier_price_query": true,
+        "had_supplier_price_history": false,
+        "had_quality_proxy_query": true,
+        "had_return_rate_query": false,
+        "had_rating_query": true,
+        "execute_code_quality_mentions": 0,
+        "execute_code_price_priority_mentions": 1,
+        "execute_code_return_mentions": 0,
+        "snippets": [
+          "from datetime import date, timedelta today = date.fromisoformat(current_date) start14 = str(today - timedelta(days=14)) sales = view_sales_profit_history(sku_ids, start14, current_date) prices = view_current_date_supplier_prices(sku_ids) selected = [ {'sku_id': '2100061223', 'supplier': 'supplier_4'}, {'sku_id': '3828153081', 'supplier': 'supplier_1'}, {'..."
+        ]
+      },
+      "candidates": [
+        {
+          "supplier_id": "supplier_3",
+          "price": 0.8029,
+          "quality_score": 4.9428,
+          "price_rank": 4,
+          "quality_rank": 1
+        },
+        {
+          "supplier_id": "supplier_4",
+          "price": 0.8045,
+          "quality_score": 4.107,
+          "price_rank": 5,
+          "quality_rank": 2
+        },
+        {
+          "supplier_id": "supplier_2",
+          "price": 0.5549,
+          "quality_score": 3.3857,
+          "price_rank": 2,
+          "quality_rank": 3
+        },
+        {
+          "supplier_id": "supplier_5",
+          "price": 0.6234,
+          "quality_score": 2.3429,
+          "price_rank": 3,
+          "quality_rank": 4
+        },
+        {
+          "supplier_id": "supplier_1",
+          "price": 0.5236,
+          "quality_score": 1.7867,
+          "price_rank": 1,
+          "quality_rank": 5
+        }
+      ]
+    },
+    {
+      "model": "Qwen3.5-397B-A17B",
+      "framework": "reflection",
+      "run_id": "run_reflection_qwen3.5-397b-a17b_caec_off_fcr_off_run1",
+      "is_survival_best": true,
+      "current_date": "1991-09-09",
+      "sku_id": "8066095605",
+      "selected_supplier": "supplier_3",
+      "quantity": 40,
+      "candidate_count": 5,
+      "selected_price_rank": 1,
+      "selected_quality_rank": 5,
+      "selected_quality_score": 1.6669,
+      "best_quality_supplier": "supplier_4",
+      "best_quality_score": 4.6861,
+      "selected_is_cheapest": true,
+      "selected_is_quality_best": false,
+      "pre_action_context": {
+        "relevant_tools": {
+          "view_funds_and_date": 2,
+          "view_shelf_status": 3,
+          "view_inventory": 2,
+          "view_today_news": 1,
+          "execute_code": 3,
+          "view_current_date_supplier_prices": 1
+        },
+        "price_tool_count": 1,
+        "quality_proxy_tool_count": 0,
+        "quality_proxy_tools": {},
+        "had_supplier_price_query": true,
+        "had_supplier_price_history": false,
+        "had_quality_proxy_query": false,
+        "had_return_rate_query": false,
+        "had_rating_query": false,
+        "execute_code_quality_mentions": 0,
+        "execute_code_price_priority_mentions": 1,
+        "execute_code_return_mentions": 0,
+        "snippets": [
+          "today = date.fromisoformat(current_date) # Candidate SKUs identified earlier (14 SKUs to fill 20 remaining shelf slots) candidates = [ '8066095605',  # Beer - SunPeak '5200003925',  # Bottled Juices - AquaZest '5100001251',  # Canned Soup - TrailRoot '3828153085',  # Cheeses - CreamHaven '4400000004',  # Cookies - GrahaBite '4400000057',  # Crackers - Nab..."
+        ]
+      },
+      "candidates": [
+        {
+          "supplier_id": "supplier_4",
+          "price": 4.3884,
+          "quality_score": 4.6861,
+          "price_rank": 3,
+          "quality_rank": 1
+        },
+        {
+          "supplier_id": "supplier_1",
+          "price": 3.4742,
+          "quality_score": 3.7387,
+          "price_rank": 2,
+          "quality_rank": 2
+        },
+        {
+          "supplier_id": "supplier_2",
+          "price": 4.5004,
+          "quality_score": 2.6066,
+          "price_rank": 4,
+          "quality_rank": 3
+        },
+        {
+          "supplier_id": "supplier_5",
+          "price": 4.972,
+          "quality_score": 2.1429,
+          "price_rank": 5,
+          "quality_rank": 4
+        },
+        {
+          "supplier_id": "supplier_3",
+          "price": 3.3091,
+          "quality_score": 1.6669,
+          "price_rank": 1,
+          "quality_rank": 5
+        }
+      ]
+    },
+    {
+      "model": "Qwen3.5-397B-A17B",
+      "framework": "reflection",
+      "run_id": "run_reflection_qwen3.5-397b-a17b_caec_off_fcr_off_run1",
+      "is_survival_best": true,
+      "current_date": "1991-09-09",
+      "sku_id": "4400000004",
+      "selected_supplier": "supplier_3",
+      "quantity": 50,
+      "candidate_count": 5,
+      "selected_price_rank": 1,
+      "selected_quality_rank": 5,
+      "selected_quality_score": 1.7542,
+      "best_quality_supplier": "supplier_1",
+      "best_quality_score": 4.6778,
+      "selected_is_cheapest": true,
+      "selected_is_quality_best": false,
+      "pre_action_context": {
+        "relevant_tools": {
+          "view_funds_and_date": 2,
+          "view_shelf_status": 3,
+          "view_inventory": 2,
+          "view_today_news": 1,
+          "execute_code": 3,
+          "view_current_date_supplier_prices": 1
+        },
+        "price_tool_count": 1,
+        "quality_proxy_tool_count": 0,
+        "quality_proxy_tools": {},
+        "had_supplier_price_query": true,
+        "had_supplier_price_history": false,
+        "had_quality_proxy_query": false,
+        "had_return_rate_query": false,
+        "had_rating_query": false,
+        "execute_code_quality_mentions": 0,
+        "execute_code_price_priority_mentions": 1,
+        "execute_code_return_mentions": 0,
+        "snippets": [
+          "today = date.fromisoformat(current_date) # Candidate SKUs identified earlier (14 SKUs to fill 20 remaining shelf slots) candidates = [ '8066095605',  # Beer - SunPeak '5200003925',  # Bottled Juices - AquaZest '5100001251',  # Canned Soup - TrailRoot '3828153085',  # Cheeses - CreamHaven '4400000004',  # Cookies - GrahaBite '4400000057',  # Crackers - Nab..."
+        ]
+      },
+      "candidates": [
+        {
+          "supplier_id": "supplier_1",
+          "price": 0.3674,
+          "quality_score": 4.6778,
+          "price_rank": 2,
+          "quality_rank": 1
+        },
+        {
+          "supplier_id": "supplier_4",
+          "price": 0.5465,
+          "quality_score": 4.4685,
+          "price_rank": 5,
+          "quality_rank": 2
+        },
+        {
+          "supplier_id": "supplier_5",
+          "price": 0.5449,
+          "quality_score": 4.4437,
+          "price_rank": 4,
+          "quality_rank": 3
+        },
+        {
+          "supplier_id": "supplier_2",
+          "price": 0.3851,
+          "quality_score": 2.1786,
+          "price_rank": 3,
+          "quality_rank": 4
+        },
+        {
+          "supplier_id": "supplier_3",
+          "price": 0.3542,
+          "quality_score": 1.7542,
+          "price_rank": 1,
+          "quality_rank": 5
+        }
+      ]
+    },
+    {
+      "model": "Grok-4.3",
+      "framework": "react",
+      "run_id": "run_react_x-ai_grok-4.3_run1",
+      "is_survival_best": true,
+      "current_date": "1991-09-07",
+      "sku_id": "8066095605",
+      "selected_supplier": "supplier_3",
+      "quantity": 50,
+      "candidate_count": 5,
+      "selected_price_rank": 1,
+      "selected_quality_rank": 5,
+      "selected_quality_score": 1.4411,
+      "best_quality_supplier": "supplier_4",
+      "best_quality_score": 4.6715,
+      "selected_is_cheapest": true,
+      "selected_is_quality_best": false,
+      "pre_action_context": {
+        "relevant_tools": {
+          "view_funds_and_date": 1,
+          "view_shelf_status": 1,
+          "view_today_news": 1,
+          "view_current_date_supplier_prices": 1
+        },
+        "price_tool_count": 1,
+        "quality_proxy_tool_count": 0,
+        "quality_proxy_tools": {},
+        "had_supplier_price_query": true,
+        "had_supplier_price_history": false,
+        "had_quality_proxy_query": false,
+        "had_return_rate_query": false,
+        "had_rating_query": false,
+        "execute_code_quality_mentions": 0,
+        "execute_code_price_priority_mentions": 0,
+        "execute_code_return_mentions": 0,
+        "snippets": []
+      },
+      "candidates": [
+        {
+          "supplier_id": "supplier_4",
+          "price": 4.254,
+          "quality_score": 4.6715,
+          "price_rank": 3,
+          "quality_rank": 1
+        },
+        {
+          "supplier_id": "supplier_1",
+          "price": 3.6627,
+          "quality_score": 3.7485,
+          "price_rank": 2,
+          "quality_rank": 2
+        },
+        {
+          "supplier_id": "supplier_2",
+          "price": 4.8585,
+          "quality_score": 3.0306,
+          "price_rank": 4,
+          "quality_rank": 3
+        },
+        {
+          "supplier_id": "supplier_5",
+          "price": 4.9708,
+          "quality_score": 2.1288,
+          "price_rank": 5,
+          "quality_rank": 4
+        },
+        {
+          "supplier_id": "supplier_3",
+          "price": 2.9416,
+          "quality_score": 1.4411,
+          "price_rank": 1,
+          "quality_rank": 5
+        }
+      ]
+    },
+    {
+      "model": "Grok-4.3",
+      "framework": "react",
+      "run_id": "run_react_x-ai_grok-4.3_run1",
+      "is_survival_best": true,
+      "current_date": "1991-09-07",
+      "sku_id": "8000000280",
+      "selected_supplier": "supplier_3",
+      "quantity": 100,
+      "candidate_count": 5,
+      "selected_price_rank": 1,
+      "selected_quality_rank": 5,
+      "selected_quality_score": 1.8699,
+      "best_quality_supplier": "supplier_4",
+      "best_quality_score": 4.895,
+      "selected_is_cheapest": true,
+      "selected_is_quality_best": false,
+      "pre_action_context": {
+        "relevant_tools": {
+          "view_funds_and_date": 1,
+          "view_shelf_status": 1,
+          "view_today_news": 1,
+          "view_current_date_supplier_prices": 1
+        },
+        "price_tool_count": 1,
+        "quality_proxy_tool_count": 0,
+        "quality_proxy_tools": {},
+        "had_supplier_price_query": true,
+        "had_supplier_price_history": false,
+        "had_quality_proxy_query": false,
+        "had_return_rate_query": false,
+        "had_rating_query": false,
+        "execute_code_quality_mentions": 0,
+        "execute_code_price_priority_mentions": 0,
+        "execute_code_return_mentions": 0,
+        "snippets": []
+      },
+      "candidates": [
+        {
+          "supplier_id": "supplier_4",
+          "price": 0.4233,
+          "quality_score": 4.895,
+          "price_rank": 2,
+          "quality_rank": 1
+        },
+        {
+          "supplier_id": "supplier_1",
+          "price": 0.4489,
+          "quality_score": 4.8318,
+          "price_rank": 3,
+          "quality_rank": 2
+        },
+        {
+          "supplier_id": "supplier_5",
+          "price": 0.5952,
+          "quality_score": 4.8242,
+          "price_rank": 5,
+          "quality_rank": 3
+        },
+        {
+          "supplier_id": "supplier_2",
+          "price": 0.5772,
+          "quality_score": 2.5386,
+          "price_rank": 4,
+          "quality_rank": 4
+        },
+        {
+          "supplier_id": "supplier_3",
+          "price": 0.3885,
+          "quality_score": 1.8699,
+          "price_rank": 1,
+          "quality_rank": 5
+        }
+      ]
+    },
+    {
+      "model": "GPT-5.5",
+      "framework": "react",
+      "run_id": "run_react_gpt55_hard_v2_20260521_110407",
+      "is_survival_best": true,
+      "current_date": "1991-09-07",
+      "sku_id": "3828153081",
+      "selected_supplier": "supplier_1",
+      "quantity": 678,
+      "candidate_count": 5,
+      "selected_price_rank": 1,
+      "selected_quality_rank": 5,
+      "selected_quality_score": 2.0197,
+      "best_quality_supplier": "supplier_2",
+      "best_quality_score": 4.9911,
+      "selected_is_cheapest": true,
+      "selected_is_quality_best": false,
+      "pre_action_context": {
+        "relevant_tools": {
+          "view_funds_and_date": 2,
+          "view_shelf_status": 2,
+          "view_inventory": 3,
+          "view_notes": 1,
+          "view_today_news": 1,
+          "execute_code": 3,
+          "view_sku_prices": 2,
+          "view_sku_inventory_cost": 1,
+          "view_current_date_supplier_prices": 2,
+          "view_sales_profit_history": 5,
+          "view_sku_avg_ratings": 4,
+          "view_news_detail": 2,
+          "view_supplier_returns_avg_rate": 5
+        },
+        "price_tool_count": 2,
+        "quality_proxy_tool_count": 5,
+        "quality_proxy_tools": {
+          "view_sku_avg_ratings": 4,
+          "view_supplier_returns_avg_rate": 1
+        },
+        "had_supplier_price_query": true,
+        "had_supplier_price_history": false,
+        "had_quality_proxy_query": true,
+        "had_return_rate_query": true,
+        "had_rating_query": true,
+        "execute_code_quality_mentions": 0,
+        "execute_code_price_priority_mentions": 0,
+        "execute_code_return_mentions": 0,
+        "snippets": []
+      },
+      "candidates": [
+        {
+          "supplier_id": "supplier_2",
+          "price": 0.5018,
+          "quality_score": 4.9911,
+          "price_rank": 5,
+          "quality_rank": 1
+        },
+        {
+          "supplier_id": "supplier_3",
+          "price": 0.4752,
+          "quality_score": 4.9717,
+          "price_rank": 4,
+          "quality_rank": 2
+        },
+        {
+          "supplier_id": "supplier_5",
+          "price": 0.4728,
+          "quality_score": 3.8794,
+          "price_rank": 3,
+          "quality_rank": 3
+        },
+        {
+          "supplier_id": "supplier_4",
+          "price": 0.4555,
+          "quality_score": 3.1254,
+          "price_rank": 2,
+          "quality_rank": 4
+        },
+        {
+          "supplier_id": "supplier_1",
+          "price": 0.3753,
+          "quality_score": 2.0197,
+          "price_rank": 1,
+          "quality_rank": 5
+        }
+      ]
+    },
+    {
+      "model": "GPT-5.5",
+      "framework": "react",
+      "run_id": "run_react_gpt55_hard_v2_20260521_110407",
+      "is_survival_best": true,
+      "current_date": "1991-09-07",
+      "sku_id": "2500002561",
+      "selected_supplier": "supplier_1",
+      "quantity": 244,
+      "candidate_count": 5,
+      "selected_price_rank": 1,
+      "selected_quality_rank": 5,
+      "selected_quality_score": 2.1009,
+      "best_quality_supplier": "supplier_5",
+      "best_quality_score": 4.9093,
+      "selected_is_cheapest": true,
+      "selected_is_quality_best": false,
+      "pre_action_context": {
+        "relevant_tools": {
+          "view_funds_and_date": 2,
+          "view_shelf_status": 2,
+          "view_inventory": 3,
+          "view_notes": 1,
+          "view_today_news": 1,
+          "execute_code": 3,
+          "view_sku_prices": 2,
+          "view_sku_inventory_cost": 1,
+          "view_current_date_supplier_prices": 2,
+          "view_sales_profit_history": 5,
+          "view_sku_avg_ratings": 4,
+          "view_news_detail": 2,
+          "view_supplier_returns_avg_rate": 5
+        },
+        "price_tool_count": 2,
+        "quality_proxy_tool_count": 5,
+        "quality_proxy_tools": {
+          "view_sku_avg_ratings": 4,
+          "view_supplier_returns_avg_rate": 1
+        },
+        "had_supplier_price_query": true,
+        "had_supplier_price_history": false,
+        "had_quality_proxy_query": true,
+        "had_return_rate_query": true,
+        "had_rating_query": true,
+        "execute_code_quality_mentions": 0,
+        "execute_code_price_priority_mentions": 0,
+        "execute_code_return_mentions": 0,
+        "snippets": []
+      },
+      "candidates": [
+        {
+          "supplier_id": "supplier_5",
+          "price": 0.7646,
+          "quality_score": 4.9093,
+          "price_rank": 4,
+          "quality_rank": 1
+        },
+        {
+          "supplier_id": "supplier_3",
+          "price": 0.6334,
+          "quality_score": 4.7084,
+          "price_rank": 2,
+          "quality_rank": 2
+        },
+        {
+          "supplier_id": "supplier_4",
+          "price": 0.7655,
+          "quality_score": 4.6835,
+          "price_rank": 5,
+          "quality_rank": 3
+        },
+        {
+          "supplier_id": "supplier_2",
+          "price": 0.7052,
+          "quality_score": 2.153,
+          "price_rank": 3,
+          "quality_rank": 4
+        },
+        {
+          "supplier_id": "supplier_1",
+          "price": 0.4589,
+          "quality_score": 2.1009,
+          "price_rank": 1,
+          "quality_rank": 5
+        }
+      ]
+    }
+  ]
+}

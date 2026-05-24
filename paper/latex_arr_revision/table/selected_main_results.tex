@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2.2pt}
+\renewcommand{\arraystretch}{1.08}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llrrrrrrrrrr}
+\toprule
+Entry & Framework & Days $\uparrow$ & Networth $\uparrow$ & Sales $\uparrow$ & Sold products/d $\uparrow$ & Return $\downarrow$ & Expired $\downarrow$ & Stockout $\downarrow$ & Direct tools/d $\uparrow$ & Total tools/d $\uparrow$ & Tokens/d $\downarrow$ \\
+\midrule
+DeepSeek-V4-Pro & Plan-and-Act & \textbf{180} & \textbf{10,120.90} & \textbf{164,417} & \textbf{32.57} & \textbf{0.0858} & 0.0144 & 116 & 23.23 & \textbf{62.35} & 508,516 \\
+GLM-5.1 & ReAct & 60 & -2,134.36 & 7,016 & 3.97 & 0.1347 & 0.0297 & 14 & \textbf{37.58} & 39.98 & 1,054,511 \\
+GPT-5.5 & ReAct & \textbf{180} & \textbf{24,350.98} & \textbf{136,405} & \textbf{32.27} & \textbf{0.0646} & \textbf{0.0113} & 137 & 17.09 & \textbf{106.86} & \textbf{176,260} \\
+Grok-4.3 & ReAct & 58 & 828.40 & 11,305 & 6.74 & 0.1028 & 0.0577 & \textbf{24} & 9.50 & 10.36 & \textbf{144,582} \\
+Kimi-K2.6 & ReAct & 130 & 792.19 & 86,214 & 25.73 & 0.1226 & 0.0411 & 62 & \textbf{26.39} & 45.76 & 523,108 \\
+MiniMax-M2.5 & Plan-and-Act & 73 & -397.95 & 23,521 & 12.08 & 0.1077 & \textbf{0.0049} & 52 & 18.67 & 40.19 & 484,698 \\
+Qwen3.5-397B-A17B & Reflection & 71 & 1,183.17 & 35,622 & 26.17 & 0.1047 & 0.0655 & \textbf{48} & 19.87 & 49.76 & 686,103 \\
+\midrule
+Non-LLM Heuristic & Heuristic & 180 & 131,510.42 & 267,998 & 34.48 & 0.0201 & 0.0059 & 122 & 141.44 & 141.44 & 0 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Main selected-run results in the single RetailBench environment. Arrows indicate the preferred direction, and bold values mark the top two LLM-agent results for each metric. The Framework column reports the prompting framework selected by the survival-first rule: longest survival horizon, with final net worth and total sales used as tie-breakers. The non-LLM heuristic is included only as a hand-crafted oracle-style reference, not as a directly comparable language-agent baseline.}
+\label{tab:selected_main_results}
+\vspace{-3mm}
+\end{table*}

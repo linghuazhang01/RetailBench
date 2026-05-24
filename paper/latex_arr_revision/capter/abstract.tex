@@ -1,0 +1,7 @@
+Large language model (LLM) agents have made rapid progress on short-horizon, well-scoped tasks, yet their ability to sustain coherent decisions in dynamic long-horizon environments remains uncertain. 
+We introduce RetailBench, a data-grounded simulation benchmark for evaluating tool-using LLM agents in single-store supermarket operation. 
+RetailBench models retail management as a partially observable decision process and is designed to support thousand-day-scale simulations. In this environment, agents must manage pricing, replenishment, supplier selection, shelf assortment, inventory aging, customer feedback, external events, and cash-flow constraints. 
+We evaluate seven contemporary LLMs under representative agent frameworks over a 180-day evaluation horizon and compare them with a hand-crafted heuristic reference policy. 
+Results show substantial variation across models: only a small subset survives the full evaluation horizon, and even the strongest LLM runs remain substantially behind the reference policy in final net worth and sales outcomes. 
+Behavioral analysis attributes these gaps to incomplete evidence acquisition, surface-level decision making, and the lack of a consistent long-horizon policy. 
+RetailBench provides a controlled testbed for studying reliable autonomy in economically grounded long-horizon decision-making.
