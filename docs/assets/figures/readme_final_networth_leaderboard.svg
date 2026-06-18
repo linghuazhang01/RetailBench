@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="620" viewBox="0 0 1240 620" role="img" aria-labelledby="title desc">
+<title id="title">RetailBench selected-run final net worth leaderboard</title>
+<desc id="desc">Horizontal bar chart comparing Oracle Policy and selected LLM runs by final net worth in the hard_v2 environment.</desc>
+<rect width="1240" height="620" fill="#ffffff"/>
+<text x="250" y="34" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700">Selected-run final net worth</text>
+<text x="250" y="58" fill="#475569" font-family="Inter, Arial, sans-serif" font-size="14">RetailBench hard_v2, survival-first selection over 20 runs, 180-day horizon</text>
+<line x1="250" y1="544" x2="1076" y2="544" stroke="#1f2937" stroke-width="1.2"/>
+<line x1="250.00" y1="78" x2="250.00" y2="544" stroke="#e2e8f0" stroke-width="1"/>
+<text x="250.00" y="572" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">-$10.0k</text>
+<line x1="305.07" y1="78" x2="305.07" y2="544" stroke="#94a3b8" stroke-width="1.4"/>
+<text x="305.07" y="572" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">$0</text>
+<line x1="442.73" y1="78" x2="442.73" y2="544" stroke="#e2e8f0" stroke-width="1"/>
+<text x="442.73" y="572" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">$25.0k</text>
+<line x1="580.40" y1="78" x2="580.40" y2="544" stroke="#e2e8f0" stroke-width="1"/>
+<text x="580.40" y="572" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">$50.0k</text>
+<line x1="718.07" y1="78" x2="718.07" y2="544" stroke="#e2e8f0" stroke-width="1"/>
+<text x="718.07" y="572" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">$75.0k</text>
+<line x1="855.73" y1="78" x2="855.73" y2="544" stroke="#e2e8f0" stroke-width="1"/>
+<text x="855.73" y="572" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">$100.0k</text>
+<line x1="993.40" y1="78" x2="993.40" y2="544" stroke="#e2e8f0" stroke-width="1"/>
+<text x="993.40" y="572" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">$125.0k</text>
+<text x="234" y="112.125" text-anchor="end" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="700">Oracle Policy</text>
+<rect x="305.07" y="89.65" width="724.18" height="33.78" rx="3" fill="#1f2937" opacity="0.95"/>
+<text x="1037.25" y="112.125" text-anchor="start" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">$131.5k</text>
+<text x="1104" y="112.125" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">180 days</text>
+<text x="234" y="170.375" text-anchor="end" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="500">GPT-5.5</text>
+<rect x="305.07" y="147.90" width="134.09" height="33.78" rx="3" fill="#0f766e" opacity="0.82"/>
+<text x="447.16" y="170.375" text-anchor="start" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">$24.4k</text>
+<text x="1104" y="170.375" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">180 days</text>
+<text x="234" y="228.625" text-anchor="end" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="500">DeepSeek-V4-Pro</text>
+<rect x="305.07" y="206.15" width="55.73" height="33.78" rx="3" fill="#2563eb" opacity="0.82"/>
+<text x="368.80" y="228.625" text-anchor="start" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">$10.1k</text>
+<text x="1104" y="228.625" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">180 days</text>
+<text x="234" y="286.875" text-anchor="end" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="500">Kimi-K2.6</text>
+<rect x="305.07" y="264.40" width="4.36" height="33.78" rx="3" fill="#b45309" opacity="0.82"/>
+<text x="317.43" y="286.875" text-anchor="start" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">$792</text>
+<text x="1104" y="286.875" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">130 days</text>
+<text x="234" y="345.125" text-anchor="end" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="500">MiniMax-M2.5</text>
+<rect x="302.88" y="322.65" width="2.19" height="33.78" rx="3" fill="#be123c" opacity="0.82"/>
+<text x="294.88" y="345.125" text-anchor="end" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">-$398</text>
+<text x="1104" y="345.125" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">73 days</text>
+<text x="234" y="403.375" text-anchor="end" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="500">Qwen3.5-397B-A17B</text>
+<rect x="305.07" y="380.90" width="6.52" height="33.78" rx="3" fill="#7c3aed" opacity="0.82"/>
+<text x="319.58" y="403.375" text-anchor="start" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">$1.2k</text>
+<text x="1104" y="403.375" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">71 days</text>
+<text x="234" y="461.625" text-anchor="end" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="500">GLM-5.1</text>
+<rect x="293.31" y="439.15" width="11.75" height="33.78" rx="3" fill="#64748b" opacity="0.82"/>
+<text x="285.31" y="461.625" text-anchor="end" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">-$2.1k</text>
+<text x="1104" y="461.625" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">60 days</text>
+<text x="234" y="519.875" text-anchor="end" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="14" font-weight="500">Grok-4.3</text>
+<rect x="305.07" y="497.40" width="4.56" height="33.78" rx="3" fill="#0891b2" opacity="0.82"/>
+<text x="317.63" y="519.875" text-anchor="start" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="600">$828</text>
+<text x="1104" y="519.875" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">58 days</text>
+<text x="663" y="598" text-anchor="middle" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="12">Final net worth in USD-equivalent simulator units; stopped LLM runs retain their terminal value only in the trajectory view.</text>
+</svg>
