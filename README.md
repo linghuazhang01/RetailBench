@@ -58,7 +58,7 @@ The non-LLM policy is an oracle-style reference, not a fair language-agent
 baseline. It is included to show how far current LLM agents remain from a
 privileged policy with structured access to the task.
 
-## Current Results Snapshot
+## Benchmark Results
 
 The public result package reports a survival-first selected-run analysis over
 seven LLMs and 20 rollout runs in the `hard_v2` setting.
@@ -72,9 +72,37 @@ seven LLMs and 20 rollout runs in the `hard_v2` setting.
 | Agent frameworks | `react`, `reflection`, `plan_and_act` |
 | Selection rule | maximize `run_days`, then `final_networth`, then `total_sales` |
 
-The benchmark homepage visualizes the selected-run leaderboard, net-worth
-trajectories, and four-stage diagnostic results. The underlying static data is
-stored in:
+### Selected-Run Leaderboard
+
+![Selected-run final net worth leaderboard](docs/assets/figures/readme_final_networth_leaderboard.svg)
+
+| Policy / model | Framework | Days | Final net worth | Total sales | Net-worth gap to Oracle |
+| --- | --- | ---: | ---: | ---: | ---: |
+| Oracle Policy | `quality_based` | 180 | $131.5k | 267,998 | $0.0k |
+| GPT-5.5 | `react` | 180 | $24.4k | 136,405 | $107.2k |
+| DeepSeek-V4-Pro | `plan_and_act` | 180 | $10.1k | 164,417 | $121.4k |
+| Kimi-K2.6 | `react` | 130 | $0.8k | 86,214 | $130.7k |
+| MiniMax-M2.5 | `plan_and_act` | 73 | -$0.4k | 23,521 | $131.9k |
+| Qwen3.5-397B-A17B | `reflection` | 71 | $1.2k | 35,622 | $130.3k |
+| GLM-5.1 | `react` | 60 | -$2.1k | 7,016 | $133.6k |
+| Grok-4.3 | `react` | 58 | $0.8k | 11,305 | $130.7k |
+
+The Oracle Policy is the non-LLM heuristic reference used to contextualize the
+remaining long-horizon gap. It is not intended as a fair language-agent
+baseline.
+
+### Net-Worth Trajectory
+
+![Net worth trajectory over the 180-day horizon](docs/assets/figures/readme_networth_trajectory.svg)
+
+The trajectory view shows that the strongest selected LLM runs can survive the
+full 180-day horizon, but they still remain far below the Oracle Policy in
+terminal net worth. Runs that stop early are carried forward at terminal net
+worth only for visual comparison with the full horizon.
+
+The benchmark homepage provides the same results as an interactive static page,
+including sortable tables and all-run diagnostic figures. The underlying static
+data is stored in:
 
 - [`docs/assets/benchmark_results.json`](docs/assets/benchmark_results.json)
 - [`paper_submit_data/outputs/best_framework_by_model.csv`](paper_submit_data/outputs/best_framework_by_model.csv)
