@@ -50,8 +50,7 @@ a {
 
 .brand,
 .nav-links,
-.hero-actions,
-.stage-tabs {
+.hero-actions {
   align-items: center;
   display: flex;
 }
@@ -104,15 +103,13 @@ a {
 
 .kicker,
 .section-label,
-.stage-label,
 .metric-label,
 .note {
   color: var(--muted);
 }
 
 .kicker,
-.section-label,
-.stage-label {
+.section-label {
   font-size: 12px;
   font-weight: 800;
   margin: 0 0 10px;
@@ -209,8 +206,7 @@ h3 {
   border-right: 0;
 }
 
-.hero-facts dt,
-.stage-metrics dt {
+.hero-facts dt {
   color: var(--subtle);
   font-size: 11px;
   font-weight: 800;
@@ -237,8 +233,7 @@ h3 {
   width: 100%;
 }
 
-.hero-figure figcaption,
-.stage-figure figcaption {
+.hero-figure figcaption {
   color: var(--subtle);
   font-size: 12px;
   margin-top: 9px;
@@ -288,8 +283,7 @@ h3 {
 }
 
 .intro-grid,
-.section-heading,
-.stage-panel {
+.section-heading {
   display: grid;
   gap: 30px;
   grid-template-columns: 0.9fr 1.1fr;
@@ -537,77 +531,6 @@ h3 {
   margin-top: 12px;
 }
 
-.stage-tabs {
-  flex-wrap: wrap;
-  gap: 7px;
-  justify-content: end;
-}
-
-.stage-tab {
-  background: var(--surface);
-  border: 1px solid var(--line-dark);
-  color: var(--muted);
-  cursor: pointer;
-  font: inherit;
-  font-size: 13px;
-  font-weight: 800;
-  min-height: 38px;
-  padding: 0 12px;
-}
-
-.stage-tab[aria-selected="true"] {
-  background: var(--blue);
-  border-color: var(--blue);
-  color: var(--surface);
-}
-
-.stage-panel {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  margin-top: 24px;
-  padding: 22px;
-}
-
-.stage-copy {
-  align-self: center;
-}
-
-.stage-metrics {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 20px 0;
-}
-
-.stage-metrics div {
-  background: var(--surface-alt);
-  border: 1px solid var(--line);
-  padding: 12px;
-}
-
-.stage-metrics dd {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 25px;
-  font-weight: 800;
-  margin: 2px 0 0;
-}
-
-.stage-insight {
-  color: #344054;
-  font-size: 15px;
-}
-
-.stage-figure {
-  margin: 0;
-}
-
-.stage-figure img {
-  border: 1px solid var(--line);
-  display: block;
-  height: auto;
-  width: 100%;
-}
-
 .footer {
   border-top: 1px solid var(--line);
   color: var(--muted);
@@ -668,8 +591,7 @@ h3 {
   .metric-strip,
   .findings,
   .intro-grid,
-  .section-heading,
-  .stage-panel {
+  .section-heading {
     grid-template-columns: 1fr;
   }
 
@@ -703,15 +625,10 @@ h3 {
   }
 
   .metric-select,
-  .stage-tabs,
   .chart-note {
     justify-self: start;
     justify-content: start;
     text-align: left;
-  }
-
-  .stage-metrics {
-    grid-template-columns: 1fr;
   }
 
   .trajectory-panel {

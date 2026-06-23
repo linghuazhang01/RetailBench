@@ -9,7 +9,7 @@
     >
     <title>RetailBench</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/site.css?v=20260604-networth">
+    <link rel="stylesheet" href="assets/site.css?v=20260623-pipeline">
   </head>
   <body>
     <header class="topbar" aria-label="Primary navigation">
@@ -21,7 +21,6 @@
         <a href="#benchmark">Benchmark</a>
         <a href="#networth">Net worth</a>
         <a href="#leaderboard">Results</a>
-        <a href="#diagnostics">Diagnostics</a>
       </nav>
     </header>
 
@@ -191,38 +190,6 @@
         <p class="note" id="selection-rule"></p>
       </section>
 
-      <section class="section pipeline" id="diagnostics" aria-labelledby="diagnostics-title">
-        <div class="section-heading">
-          <div>
-            <p class="section-label">Failure decomposition</p>
-            <h2 id="diagnostics-title">Four-stage operational pipeline</h2>
-          </div>
-          <div class="stage-tabs" id="stage-tabs" role="tablist" aria-label="Diagnostic stages"></div>
-        </div>
-        <div class="stage-panel">
-          <div class="stage-copy">
-            <p class="stage-label" id="stage-label">Stage 1</p>
-            <h3 id="stage-title">SKU Selection</h3>
-            <p id="stage-question"></p>
-            <dl class="stage-metrics">
-              <div>
-                <dt id="stage-metric-label">Metric</dt>
-                <dd><span id="stage-llm-mean"></span> LLM mean</dd>
-              </div>
-              <div>
-                <dt>Heuristic</dt>
-                <dd id="stage-heuristic"></dd>
-              </div>
-            </dl>
-            <p class="stage-insight" id="stage-insight"></p>
-          </div>
-          <figure class="stage-figure">
-            <img id="stage-image" alt="">
-            <figcaption id="stage-caption"></figcaption>
-          </figure>
-        </div>
-      </section>
-
     </main>
 
     <footer class="footer">
@@ -234,6 +201,6 @@
     </footer>
 
     <script src="assets/benchmark_results.js?v=20260604-file"></script>
-    <script src="assets/site.js?v=20260604-file"></script>
+    <script src="assets/site.js?v=20260623-pipeline"></script>
   </body>
 </html>

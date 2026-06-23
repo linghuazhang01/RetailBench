@@ -24,7 +24,6 @@ const formatCompactCurrency = (value) => {
 const state = {
   data: null,
   sortKey: "days",
-  activeStage: 0,
 };
 
 const byId = (id) => document.getElementById(id);
@@ -77,51 +76,6 @@ function renderLeaderboard() {
       `;
     })
     .join("");
-}
-
-function renderStageTabs() {
-  const tabs = byId("stage-tabs");
-  tabs.innerHTML = state.data.stageDiagnostics
-    .map(
-      (stage, index) => `
-        <button
-          class="stage-tab"
-          type="button"
-          role="tab"
-          aria-selected="${index === state.activeStage}"
-          data-stage="${index}"
-        >
-          ${stage.label}
-        </button>
-      `,
-    )
-    .join("");
-
-  tabs.querySelectorAll(".stage-tab").forEach((button) => {
-    button.addEventListener("click", () => {
-      state.activeStage = Number(button.dataset.stage);
-      renderStage();
-      renderStageTabs();
-    });
-  });
-}
-
-function renderStage() {
-  const stage = state.data.stageDiagnostics[state.activeStage];
-  setText("stage-label", stage.label);
-  setText("stage-title", stage.title);
-  setText("stage-question", stage.question);
-  setText("stage-metric-label", stage.metric);
-  setText("stage-llm-mean", formatNumber(stage.llmMean, 2));
-  setText("stage-heuristic", formatNumber(stage.heuristic, 2));
-  setText("stage-insight", stage.insight);
-  setText(
-    "stage-caption",
-    `${stage.title}: survival-first selected runs. All-run figure is available in the static assets next to this page.`,
-  );
-  const img = byId("stage-image");
-  img.src = stage.figure;
-  img.alt = `${stage.title} diagnostic scatter plot for survival-first selected RetailBench runs.`;
 }
 
 function svgElement(name, attrs = {}) {
@@ -311,8 +265,6 @@ async function init() {
   renderSummary();
   renderNetWorthChart();
   renderLeaderboard();
-  renderStageTabs();
-  renderStage();
 
   byId("sort-select").addEventListener("change", (event) => {
     state.sortKey = event.target.value;
